@@ -3,27 +3,27 @@ var csv = require('csv');
 
 var cols = [
   {
-    name:'title',
+    name: 'title',
     type: 'varchar(16)',
   },
   {
-    name: 'firstName',
+    name: 'firstname',
     type: 'varchar(48)',
   },
   {
-    name: 'middleName',
+    name: 'middlename',
     type: 'varchar(48)',
   },
   {
-    name: 'lastName',
+    name: 'lastname',
     type: 'varhcar(48)',
   },
   {
-    name: 'nameSuffix',
+    name: 'name_suffix',
     type: 'varchar(10)',
   },
   {
-    name: 'nickName',
+    name: 'nickname',
     type: 'varchar(48)',
   },
   {
@@ -39,7 +39,7 @@ var cols = [
     type: 'varchar(48)',
   },
   {
-    name: 'inOffice',
+    name: 'in_office',
     type: 'integer',
   },
   {
@@ -63,51 +63,51 @@ var cols = [
     type: 'varchar(160)',
   },
   {
-    name: 'congressOffice',
+    name: 'congress_office',
     type: 'varchar(80)',
   },
   {
-    name: 'bioguideID',
+    name: 'bioguide_id',
     type: 'varchar(80)',
   },
   {
-    name: 'votesmartID',
+    name: 'votesmart_id',
     type: 'varchar(80)',
   },
   {
-    name: 'fecID',
+    name: 'fec_id',
     type: 'varchar(80)',
   },
   {
-    name: 'govtrackID',
+    name: 'govtrack_id',
     type: 'varchar(80)',
   },
   {
-    name: 'crpID',
+    name: 'crp_id',
     type: 'varchar(80)',
   },
   {
-    name: 'twitterID',
+    name: 'twitter_id',
     type: 'varchar(80)',
   },
   {
-    name: 'congresspediaURL',
+    name: 'congresspedia_url',
     type: 'varchar(160)',
   },
   {
-    name: 'youtubeURL',
+    name: 'youtube_url',
     type: 'varchar(160)',
   },
   {
-    name: 'facebookID',
+    name: 'facebook_id',
     type: 'varchar(160)',
   },
   {
-    name: 'officialRSS',
+    name: 'official_rss',
     type: 'varchar(160)',
   },
   {
-    name: 'senateClass',
+    name: 'senate_class',
     type: 'varchar(28)',
   },
   {
