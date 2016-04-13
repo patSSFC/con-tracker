@@ -4,5 +4,32 @@ body {
 #searchTitle {
   color: white;
   font-size: 5em;
+  text-align: center;
 
+}
+/*.container {
+  display: flex;
+  margin-top: 50%;
+  flex-direction: column;
+  justify-content: space-around;
+}*/
+.search {
+  font-size: 5em;
+}
+@media (max-width: 400px) {
+  .container {
+    display: flex;
+    margin-top: 50%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
+}
+
+@media (min-width: 550px) {
+  .container {
+    display: flex;
+    margin-top: 12%;
+    flex-direction: column;
+    justify-content: space-around;
+  }
 }
