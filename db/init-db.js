@@ -127,6 +127,7 @@ var maketable = function (cols) {
   return createQuery;
 };
 
-db.connect().query(maketable(cols));
+// uncomment me to re-create the database
+// db.connect().query(maketable(cols));
 
 var insertRecord = '';
