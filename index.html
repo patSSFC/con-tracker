@@ -2,8 +2,18 @@
 <html>
   <head>
     <link type="text/css" rel="stylesheet" href="styles/style.css">
+    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
   </head>
   <body>
-    <h1>suuup!</h1>
+      <h1 id='searchTitle'>Find a politician</h1>
+      <section class='container' id=mainSearch>
+        <input id='searchField' class="search" placeholder="Search"/>
+        <button class="searchBtn" data-sort="name">
+          Search
+        </button>
+
+      </section>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+    <script src='scripts/app.js'></script>
   </body>
 </html>
