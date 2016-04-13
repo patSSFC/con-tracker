@@ -4,7 +4,8 @@
   "description": "A visualizer for political contributions and report cards",
   "main": "server.js",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "pg": "4.5.3"
   },
   "devDependencies": {},
   "scripts": {
