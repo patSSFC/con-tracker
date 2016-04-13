@@ -16,7 +16,7 @@ var cols = [
   },
   {
     name: 'lastname',
-    type: 'varhcar(48)',
+    type: 'varchar(48)',
   },
   {
     name: 'name_suffix',
@@ -116,5 +116,17 @@ var cols = [
   },
 ];
 
-var create_query = 'CREATE TABLE legislators';
-var insert_record = '';
+var maketable = function (cols) {
+  var createQuery = 'CREATE TABLE politicians (';
+  cols.map(function (col) {
+    createQuery += col.name + ' ' + col.type + ', ';
+  });
+
+  createQuery = createQuery.substr(0, createQuery.lastIndexOf(', '));
+  createQuery += ')';
+  return createQuery;
+};
+
+db.connect().query(maketable(cols));
+
+var insertRecord = '';
