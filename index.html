@@ -1,17 +1,36 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <link type="text/css" rel="stylesheet" href="styles/style.css">
+    <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
   </head>
   <body>
-      <h1 id='searchTitle'>Find a politician</h1>
-      <section class='container' id=mainSearch>
-        <input id='searchField' class="search" placeholder="Search"/>
-        <button class="searchBtn" data-sort="name">
-          Search
-        </button>
 
+      <section class='container' id='mainSearch'>
+        <h1 id='searchTitle'>Find a politician</h1>
+        <div class='search-contain'>
+          <input id='searchField' class="search" placeholder="Search"/>
+          <button class="searchBtn" data-sort="name">
+            Search
+          </button>
+        </div>
+
+      </section>
+
+      <section class="container" id="politician-view">
+        <div class="general-info">
+          <div class="poli-info">
+            <figure class="poli-picture">
+              <img src="images/trump.jpg" alt="trump">
+            </figure>
+          </div>
+          <div class="largest-donor">
+            asdlfkjaslkdjf
+          </div>
+        </div>
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     <script src='scripts/app.js'></script>
