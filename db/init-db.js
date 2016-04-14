@@ -1,5 +1,11 @@
 var db = require('./db-config');
 var csv = require('csv');
+var fs = require('fs');
+var readline = require('readline');
+
+var lineReader = readline.createInterface({
+  input: fs.createReadStream('legislators.csv'),
+});
 
 var cols = [
   {
@@ -116,6 +122,7 @@ var cols = [
   },
 ];
 
+var recordsToInsert = [];
 var maketable = function (cols) {
   var createQuery = 'CREATE TABLE politicians (';
   cols.map(function (col) {
@@ -126,6 +133,19 @@ var maketable = function (cols) {
   createQuery += ')';
   return createQuery;
 };
+
+lineReader.on('line', function (line) {
+  csv.parse(line, function (err, line) {
+    recordsToInsert.push(line[0]);
+  });
+});
+
+lineReader.on('close', function (err) {
+  console.log(recordsToInsert);
+
+  //map through stuff here
+  //make sure to add single quotes around everything
+});
 
 // uncomment me to re-create the database
 // db.connect().query(maketable(cols));
