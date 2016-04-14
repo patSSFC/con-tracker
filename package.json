@@ -4,6 +4,7 @@
   "description": "A visualizer for political contributions and report cards",
   "main": "server.js",
   "dependencies": {
+    "body-parser": "^1.15.0",
     "csv": "^0.4.6",
     "express": "^4.13.4",
     "pg": "4.5.3"
