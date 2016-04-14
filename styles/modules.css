@@ -1,23 +1,7 @@
-/*body {
-  background-color: #6F256F;
-}
 #searchTitle {
   color: white;
   font-size: 5em;
   text-align: center;
-}
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-}
-
-.search-contain {
-  max-width: 100%;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
 }
 
 .search {
@@ -27,9 +11,9 @@
   display: inline-block;
   font-size: 3em;
   margin-left: .2em;
-}*/
+}
 
-/*@media only screen and (max-width: 660px) {
+@media only screen and (max-width: 660px) {
   .search-contain {
     flex-direction: column;
   }
@@ -52,4 +36,4 @@
   .container {
     margin-top: 50%;
   }
-}*/
+}
