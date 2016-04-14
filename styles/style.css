@@ -20,19 +20,19 @@ body {
 .searchBtn {
   font-size: 3em;
 }
-@media (min-width: 400px) {
-  .container {
-    display: flex;
-    margin-top: 50%;
-    flex-direction: row;
-    justify-content: center;
-  }
-}
 
 @media (min-width: 550px) {
   .container {
     display: flex;
     margin-top: 12%;
+    flex-direction: row;
+    justify-content: center;
+  }
+}
+@media (min-width: 400px) {
+  .container {
+    display: flex;
+    margin-top: 50%;
     flex-direction: row;
     justify-content: center;
   }
