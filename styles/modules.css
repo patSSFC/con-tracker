@@ -1,0 +1,39 @@
+#searchTitle {
+  color: white;
+  font-size: 5em;
+  text-align: center;
+}
+
+.search {
+  font-size: 3em;
+}
+.searchBtn {
+  display: inline-block;
+  font-size: 3em;
+  margin-left: .2em;
+}
+
+@media only screen and (max-width: 660px) {
+  .search-contain {
+    flex-direction: column;
+  }
+
+  .searchBtn {
+    display: inline-block;
+    margin-top: .2em;
+    max-width: 50%;
+    margin: .2em auto 0 auto;
+  }
+}
+
+@media (max-width: 550px) {
+  .container {
+    margin-top: 20%;
+  }
+}
+
+@media only screen and (max-width: 400px) {
+  .container {
+    margin-top: 50%;
+  }
+}
