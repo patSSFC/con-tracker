@@ -4,7 +4,12 @@ body {
     rgba(0, 0, 0, 0.65)
     ),
     url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Capitol1846.jpg');
-    background-size: cover;
+  background-size: cover;
+  color: #eee;
+}
+
+img {
+  width: 100%;
 }
 
 section {
@@ -25,9 +30,14 @@ section {
   justify-content: center;
 }
 
-.poli-view {
+.poli-info {
+  display: flex;
+  flex-direction: row;
+}
 
-
+figure.poli-picture {
+  width: 30%;
+  border-radius: 50%;
 }
 
 .general-info {

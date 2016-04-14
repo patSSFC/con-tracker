@@ -13,6 +13,10 @@
   margin-left: .2em;
 }
 
+figure.poli-picture img {
+  border-radius: 50%;
+}
+
 @media only screen and (max-width: 660px) {
   .search-contain {
     flex-direction: column;
