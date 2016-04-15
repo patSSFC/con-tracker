@@ -5,11 +5,18 @@ var app = express();
 
 var buildQueryString;
 
-var proxySunlight = function (req, res) {
+var proxySunlightCongress = function (req, res) {
   console.log('Routing for sunglight api', req.params[0]);
   (requestProxy({
     url: 'https://congress.api.sunlightfoundation.com/' + req.params[0],
     headers: { 'X-APIKEY': process.env.SUNLIGHT_API_KEY },
+  }))(req, res);
+};
+
+var proxySunlightStates = function (req, res) {
+  req.query.apikey = process.env.SUNLIGHT_API_KEY;
+  (requestProxy({
+    url: 'http://openstates.org/api/v1/' + req.params[0],
   }))(req, res);
 };
 
@@ -40,7 +47,8 @@ app.get('/', function (req, res) {
 });
 
 app.get('/database/', queryDB);
-app.get('/sunlight-congress/*', proxySunlight);
+app.get('/sunlight-congress/*', proxySunlightCongress);
+app.get('/sunlight-states/*', proxySunlightStates);
 app.get('/opensecrets/*', proxyOpenSecrets);
 
 var server = app.listen(process.env.PORT || 3000, function () {
