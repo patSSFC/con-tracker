@@ -13,6 +13,10 @@
   margin-left: .2em;
 }
 
+figure.poli-picture {
+  margin-left: 0;
+}
+
 figure.poli-picture img {
   border-radius: 50%;
 }
