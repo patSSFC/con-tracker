@@ -14,16 +14,9 @@ var proxySunlight = function (req, res) {
 };
 
 var proxyOpenSecrets = function (req, res) {
-
-  var q = Object.keys(req.query).map(function (key) {
-    return key + '=' + req.query[key];
-  });
-
-  q.push('apikey=' + process.env.OPENSECRETS_API_KEY);
-  console.log('Routing for sunglight api' + q.join('&'));
-
+  req.query.apikey = process.env.OPENSECRETS_API_KEY;
   (requestProxy({
-    url: 'http://www.opensecrets.org/api/?' + q.join('&'),
+    url: 'http://www.opensecrets.org/api/',
   }))(req, res);
 };
 
