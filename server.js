@@ -20,6 +20,13 @@ var proxySunlightStates = function (req, res) {
   }))(req, res);
 };
 
+var proxySunglightFinance = function (req, res) {
+  req.query.apikey = process.env.SUNLIGHT_API_KEY;
+  (requestProxy({
+    url: 'http://realtime.influenceexplorer.com/api/' + req.params[0],
+  }))(req, res);
+};
+
 var proxyOpenSecrets = function (req, res) {
   req.query.apikey = process.env.OPENSECRETS_API_KEY;
   (requestProxy({
@@ -49,6 +56,7 @@ app.get('/', function (req, res) {
 app.get('/database/', queryDB);
 app.get('/sunlight-congress/*', proxySunlightCongress);
 app.get('/sunlight-states/*', proxySunlightStates);
+app.get('/sunlight-finance/*', proxySunglightFinance);
 app.get('/opensecrets/*', proxyOpenSecrets);
 
 var server = app.listen(process.env.PORT || 3000, function () {
