@@ -6,10 +6,11 @@
   var member = 'B000574';
   var voteHistory = 'http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/' + member + '/votes.json?api-key=43115978a94dd9f66543e486c78f855d:11:74987712';
 
-  var votesArray = ['H R 757', 'H R 1644', 'H R 1927'];
+  var votesArray = ['S J RES 23', 'H R 1927', 'H R 2130', 'H R 1644'];
 
   var findBill = function (targetArray, targetBill) {
-    return targetArray.includes(targetBill);
+    return targetBill.question === 'On Passage' &&
+           targetArray.includes(targetBill.bill.number);
   };
 
   repos.requestRepos = function (callback) {
@@ -20,8 +21,12 @@
       function (data, message, xhr) {
         var storage = data.results[0].votes;
         for (var i = 0; i < storage.length; i++) {
-          if (findBill(votesArray, storage[i].bill.number)) {
-            repos.all.push(storage[i].bill.number);
+          if (findBill(votesArray, storage[i])) {
+            var voteInfo = {};
+            voteInfo.billID = storage[i].bill.number;
+            voteInfo.title = storage[i].bill.title;
+            voteInfo.position = storage[i].position;
+            repos.all.push(voteInfo);
           }
         }
       }
