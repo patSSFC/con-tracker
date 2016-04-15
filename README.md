@@ -27,5 +27,6 @@ Query parameters should be sent to this route per the OpenSecrets API documentat
 ## Sunlight Foundation API
 The Sunlight Foundation API is accessed via `GET` requests to one of the following routes:
 
-`congress-sunlight` for the Congress API
-`congress-states` for the States API
+`/sunlight_congress/` for the Congress API
+`/sunlight_states/` for the States API
+`/sunlight_finance/` for the Realtime Finance API

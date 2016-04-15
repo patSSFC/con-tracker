@@ -54,9 +54,9 @@ app.get('/', function (req, res) {
 });
 
 app.get('/database/', queryDB);
-app.get('/sunlight-congress/*', proxySunlightCongress);
-app.get('/sunlight-states/*', proxySunlightStates);
-app.get('/sunlight-finance/*', proxySunglightFinance);
+app.get('/sunlight_congress/*', proxySunlightCongress);
+app.get('/sunlight_states/*', proxySunlightStates);
+app.get('/sunlight_finance/*', proxySunglightFinance);
 app.get('/opensecrets/*', proxyOpenSecrets);
 
 var server = app.listen(process.env.PORT || 3000, function () {
