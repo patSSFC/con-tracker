@@ -9,6 +9,7 @@
     bio.returnBio(member, function (data, message) {
       console.log(JSON.stringify(data));
       console.log(bio);
+      callback(bio);
     });
   };
 
