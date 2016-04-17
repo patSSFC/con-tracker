@@ -16,6 +16,16 @@
         <h2>Title: {{title}}
       {{/each }}
     </script>
+
+    <script id="bioTemplate" type="text/x-handlebars-template">
+      <h1>{{title}}</h1>
+      <h2>{{state}}</h2>
+      <ul>
+        <li>{{website}}</li>
+        <li>{{phone}}</li>
+        <li>{{twitter}}</li>
+      </ul>
+    </script>
   </head>
   <body>
 
@@ -46,6 +56,11 @@
       <section class="container" id="voting-view">
         <section class="general-info">
           <h1>Voting history should go here</h1>
+        </section>
+      </section>
+      <section class="container" id="bio-view">
+        <section class="general-info">
+          <h1>Bio info should go here</h1>
         </section>
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
