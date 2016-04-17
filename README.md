@@ -9,3 +9,24 @@ An ```array``` of rows can be accessed at the ```req.data.rows``` property.
 Future support is planned for filtering columns and rows.
 
 Everyone will need to set their ```env.process.DATABASE_URL``` to the heroku config var.
+
+## Interacting with APIs
+Proxies have been set up for the major APIs used by the Sunlight Foundation and Open Secets.
+### OpenSecrets APIs
+The OpenSecret API is accessed via `GET` requests to the `/opensecrets/` route.
+Query parameters should be sent to this route per the OpenSecrets API documentation.
+
+**DO NOT** include the `apikey` parameter. The proxy will add this for you.
+
+**EXAMPLE**:
+
+```http://www.opensecrets.org/api/?method=getLegislators&output=json``` becomes
+
+```/opensecrets/?method=getLegislators&output=json```
+
+## Sunlight Foundation API
+The Sunlight Foundation API is accessed via `GET` requests to one of the following routes:
+
+`/sunlight_congress/` for the Congress API
+`/sunlight_states/` for the States API
+`/sunlight_finance/` for the Realtime Finance API
