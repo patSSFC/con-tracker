@@ -26,7 +26,7 @@
   var contribRequest = "http://www.opensecrets.org/api/?method=candContrib&cid=N00007360&cycle=2016&apikey=0250595e734190ea51d62e7b981ea2d5&output=json";
 
   Filing.getFilings = function (next) {
-    $.getJSON(filingsRequest, function(data) {
+    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168&apikey=a59f2c8227c949fe90f7ccb1c0cba86f', function(data) {
       Filing.filings = data.results;
     }).done(function(data) {
       Filing.totalPerQuarter = data.results.map(function(r) {
