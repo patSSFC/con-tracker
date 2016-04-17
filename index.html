@@ -2,11 +2,13 @@
 <html>
   <head>
     <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <title>ConTraker 5000</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/x-handlebars-template" id="politician-view">
       <article class="poli-view">
@@ -55,10 +57,10 @@
   </head>
   <body>
 
-      <section class='container' id='mainSearch'>
-        <h1 id='searchTitle'>Find a politician</h1>
-        <div class='search-contain'>
-          <input id='searchField' class="search" placeholder="Search"/>
+      <section class="container" id="mainSearch">
+        <h1 id="searchTitle">Find a politician</h1>
+        <div class="search-contain">
+          <input id="searchField" class="search" placeholder="Search"/>
           <button class="searchBtn" data-sort="name">
             Search
           </button>
@@ -106,8 +108,8 @@
 
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
-    <script src='scripts/bioController.js'></script>
-    <script src='scripts/bioView.js'></script>
+    <script src="scripts/bioController.js"></script>
+    <script src="scripts/bioView.js"></script>
     <script src="scripts/votingController.js"></script>
     <script src="scripts/votingView.js"></script>
     <script src="scripts/app.js"></script>
