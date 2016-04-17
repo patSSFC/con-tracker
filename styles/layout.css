@@ -24,14 +24,26 @@ h1 {
 }
 
 .bill-info-container{
-  margin: 0px;
-  padding: 0px;
+  margin: 1%;
+  padding: 1%;
   display: -webkit-flex;
   display:         flex;
   -webkit-flex-flow: row;
   flex-flow: row;
+  justify-content: space-around;
 }
 
+.position-yes {
+  background-color: rgb(130, 255, 135);
+  border: 2px solid rgb(27, 194, 0);
+  border-radius: 10px;
+}
+
+.position-no {
+  background-color: rgb(255, 112, 112);
+  border: 2px solid rgb(227, 58, 58);
+  border-radius: 10px;
+}
 .search-contain {
   max-width: 100%;
   display: flex;

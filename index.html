@@ -48,8 +48,8 @@
 
     <script id="votesTemplate" type="text/x-handlebars-template">
       {{#each bills}}
-        <section class=" bill-info-container">
-          <p class="bill-info">{{title}}</p>
+        <section class=" bill-info-container {{positionClass}}">
+          <p class="bill-info ">{{title}}</p>
           <p class="bill-info right">Position: {{position}}</p>
         </section>
       {{/each }}
