@@ -23,6 +23,15 @@ h1 {
   justify-content: center;
 }
 
+.bill-info-container{
+  margin: 0px;
+  padding: 0px;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+}
+
 .search-contain {
   max-width: 100%;
   display: flex;
@@ -43,7 +52,7 @@ figure.poli-picture {
 .general-info, .financial-charts {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 
 /*.financial-charts {
