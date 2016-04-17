@@ -2,8 +2,8 @@
   votingViews = {};
   votingViews.renderVotes = function (votes) {
     var ctx = { votes: votes };
-    var template = Handlebars.compile($('#votesTemplate').html());
-    $('#voting-view').html(template(ctx));
+    var template = Handlebars.compile($('#votesTemplate').text());
+    $('#voting-view').append(template(ctx));
   };
 
   votingViews.loadVotes = function (member) {
