@@ -20,13 +20,19 @@ Query parameters should be sent to this route per the OpenSecrets API documentat
 
 **EXAMPLE**:
 
-```http://www.opensecrets.org/api/?method=getLegislators&output=json``` becomes
-
-```/opensecrets/?method=getLegislators&output=json```
+`http://www.opensecrets.org/api/?method=getLegislators&output=json` becomes
+`/opensecrets/?method=getLegislators&output=json`
 
 ## Sunlight Foundation API
 The Sunlight Foundation API is accessed via `GET` requests to one of the following routes:
 
 `/sunlight_congress/` for the Congress API
+
 `/sunlight_states/` for the States API
+
 `/sunlight_finance/` for the Realtime Finance API
+
+## New York Times API
+The New York Times API can be found at `/nyt_api/`.
+
+Use the proxy like this: ```/nyt_api/[[member]]/votes.json```
