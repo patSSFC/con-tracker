@@ -13,6 +13,11 @@
   margin-left: .2em;
 }
 
+.bill-info {
+  flex-direction: row;
+  min-width: 33%;
+}
+
 figure.poli-picture {
   margin-left: 0;
 }

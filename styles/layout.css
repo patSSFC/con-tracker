@@ -4,8 +4,8 @@ body {
     rgba(0, 0, 0, 0.65)
     ),
     url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Capitol1846.jpg');
-  background-size: cover;
-  color: #eee;
+    background-size: cover;
+    color: #fff;
 }
 
 img {
@@ -15,6 +15,7 @@ img {
 section {
   max-width: 960px;
   margin: 2em auto;
+>>>>>>> dev
 }
 
 h1 {
