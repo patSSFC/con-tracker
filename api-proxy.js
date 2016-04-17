@@ -19,7 +19,7 @@ var apiProxy = function () {
   var proxySunlightFinance = function (req, res) {
     req.query.apikey = process.env.SUNLIGHT_API_KEY;
     (requestProxy({
-      url: 'http://realtime.influenceexplorer.com/api/' + req.params[0],
+      url: 'http://realtime.influenceexplorer.com/api//' + req.params[0],
     }))(req, res);
   };
 
