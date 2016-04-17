@@ -1,8 +1,7 @@
 (function (module) {
-  var bio;
-
-  var fecID = 'S6OR00110';
-  var bioHistory = 'https://congress.api.sunlightfoundation.com/legislators?fec_ids=' + fecID + '&apikey=a59f2c8227c949fe90f7ccb1c0cba86f'; // pull bio info on member by fecID
+  var bio = {};
+  var fecID;
+  var bioHistory;
 
   var buildBio = function (proto) { // Takes a legislator object and creates a new legislator object with specific properties.
     var bioInfo = {};
@@ -14,16 +13,22 @@
     return bioInfo;
   };
 
-  repos.requestRepos = function (callback) {
+  var requestRepos = function (callback) {
     $.ajax({
       url: bioHistory,
       method: 'GET',
     }).success(
       function (data, message, xhr) {
-        bio = buildBio(data.results[0]);
+        bio.info = buildBio(data.results[0]);
       }
     )
     .done(callback);
+  };
+
+  bio.returnBio = function (member, callback) {
+      fecID = member;
+      bioHistory = '/sunlight_congress/' + fecID + '&apikey=a59f2c8227c949fe90f7ccb1c0cba86f';
+      requestRepos(callback);
   };
 
   module.bio = bio;
