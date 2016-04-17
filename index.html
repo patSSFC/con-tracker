@@ -10,7 +10,11 @@
 
     <script id="votesTemplate" type="text/x-handlebars-template">
       <h1>Voting History</h1>
-
+      {{ each votes }}
+        <h2>Bill ID: {{billID}}</h2>
+        <h2>Position: {{position}}</h2>
+        <h2>Title: {{title}}
+      {{/each }}
     </script>
   </head>
   <body>
@@ -41,10 +45,12 @@
 
       <section class="container" id="voting-view">
         <section class="general-info">
-
+          <h1>Voting history should go here</h1>
         </section>
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+    <script src="scripts/votingController.js"></script>
+    <script src="scripts/votingView.js"></script>
     <script src="scripts/app.js"></script>
   </body>
 </html>
