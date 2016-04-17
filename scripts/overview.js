@@ -27,7 +27,7 @@
 
   bio.returnBio = function (member, callback) {
       fecID = member;
-      bioHistory = '/sunlight_congress/' + fecID + '&apikey=a59f2c8227c949fe90f7ccb1c0cba86f';
+      bioHistory = '/sunlight_congress/' + fecID;
       requestRepos(callback);
   };
 
