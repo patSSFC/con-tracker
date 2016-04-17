@@ -40,8 +40,14 @@ figure.poli-picture {
   border-radius: 50%;
 }
 
-.general-info {
+.general-info, .financial-charts {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+/*.financial-charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}*/
