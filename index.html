@@ -6,6 +6,7 @@
     <link rel="stylesheet" href="styles/modules.css">
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/x-handlebars-template" id="politician-view">
       <article class="poli-view">
@@ -43,6 +44,14 @@
       </article>
     </script>
 
+    <script id="votesTemplate" type="text/x-handlebars-template">
+      <h1>Voting History</h1>
+      {{ each votes }}
+        <h2>Bill ID: {{billID}}</h2>
+        <h2>Position: {{position}}</h2>
+        <h2>Title: {{title}}
+      {{/each }}
+    </script>
   </head>
   <body>
 
@@ -91,12 +100,17 @@
           </div>
         </article>
       </section>
+
+      <section class="container" id="voting-view">
+        <section class="general-info">
+          <h1>Voting history should go here</h1>
+        </section>
+      </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
-    <script src='scripts/app.js'></script>
-    <!-- <script src='scripts/testRequest.js'></script> -->
-    <!-- <script src='server.js'></script> -->
     <script src='scripts/bioController.js'></script>
     <script src='scripts/bioView.js'></script>
-    <script src='scripts/financialCharts.js'></script>
+    <script src="scripts/votingController.js"></script>
+    <script src="scripts/votingView.js"></script>
+    <script src="scripts/app.js"></script>
   </body>
 </html>
