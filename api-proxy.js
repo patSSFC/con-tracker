@@ -30,11 +30,19 @@ var apiProxy = function () {
     }))(req, res);
   };
 
+  var proxyNewYorkTimes = function (req, res) {
+    req.query['api-key'] = process.env.NYT_API_KEY;
+    (requestProxy({
+      url: 'http://api.nytimes.com/svc/politics/v3/us/legislative/congress/members/' + req.params[0],
+    }))(req, res);
+  };
+
   return {
     proxySunlightFinance: proxySunlightFinance,
     proxySunlightStates: proxySunlightStates,
     proxySunlightCongress: proxySunlightCongress,
     proxyOpenSecrets: proxyOpenSecrets,
+    proxyNewYorkTimes: proxyNewYorkTimes,
   };
 };
 

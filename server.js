@@ -28,6 +28,7 @@ app.get('/sunlight_congress/*', apiProxy.proxySunlightCongress);
 app.get('/sunlight_states/*', apiProxy.proxySunlightStates);
 app.get('/sunlight_finance/*', apiProxy.proxySunlightFinance);
 app.get('/opensecrets/*', apiProxy.proxyOpenSecrets);
+app.get('/nyt_api/*', apiProxy.proxyNewYorkTimes);
 
 var server = app.listen(process.env.PORT || 3000, function () {
   console.log('Server is listening on port %s', server.address().port);
