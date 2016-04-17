@@ -8,6 +8,16 @@ body {
     color: #fff;
 }
 
+img {
+  width: 100%;
+}
+
+section {
+  max-width: 960px;
+  margin: 2em auto;
+>>>>>>> dev
+}
+
 h1 {
   color: #fff;
 }
@@ -25,8 +35,24 @@ h1 {
   justify-content: center;
 }
 
-.general-info {
+.poli-info {
+  display: flex;
+  flex-direction: row;
+}
+
+figure.poli-picture {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.general-info, .financial-charts {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+/*.financial-charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}*/
