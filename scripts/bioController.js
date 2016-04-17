@@ -41,10 +41,7 @@
       // console.log(data.response.contributors.contributor[0]["@attributes"]);
       Contributor.contributors = data.response.contributors.contributor;
     }).done(function() {
-      console.log(Contributor.contributors);
-      // Contributor.contributors.forEach(function(c) {
-      //   console.log(c['@attributes'].total);
-      // })
+      console.log(Contributor.contributors[0]["@attributes"].org_name);
     });
   }
 
