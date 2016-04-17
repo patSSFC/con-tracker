@@ -16,6 +16,7 @@
     voteInfo.billID = proto.bill.number;
     voteInfo.title = proto.bill.title;
     voteInfo.position = proto.position;
+    voteInfo.desription = proto.description;
     return voteInfo;
   };
 
@@ -38,7 +39,7 @@
 
   voteRepos.returnVotes = function (member, callback) {
     member = member;
-    voteHistory = '/nyt_api/' + member + '/votes.json?api-key=43115978a94dd9f66543e486c78f855d:11:74987712'; // Returns members last 100 votes.
+    voteHistory = '/nyt_api/' + member + '/votes.json'; // Returns members last 100 votes.
     requestRepos(callback);
   };
 
