@@ -16,6 +16,7 @@
     voteInfo.billID = proto.bill.number;
     voteInfo.title = proto.bill.title;
     voteInfo.position = proto.position;
+    voteInfo.desription = proto.description;
     return voteInfo;
   };
 

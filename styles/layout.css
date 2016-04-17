@@ -5,6 +5,7 @@ body {
     ),
     url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Capitol1846.jpg');
     background-size: cover;
+    color: #fff;
 }
 
 h1 {
