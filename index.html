@@ -4,16 +4,52 @@
     <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script type="text/x-handlebars-template" id="politician-view">
+      <article class="poli-view">
+        <div class="general-info">
+          <div class="poli-info">
+            <figure class="poli-picture">
+              <img src="images/trump.jpg" alt="trump">
+            </figure>
+            <ul class="poli-details">
+              <li>{{bioInfo.title}}</li>
+              <li>{{bioInfo.state}}</li>
+              <li>{{bioInfo.website}}</li>
+              <li>{{bioInfo.phone}}</li>
+              <li>{{bioInfo.twitter}}</li>
+            </ul>
+          </div>
+          <div class="largest-donor">
+            <h3>Largest Donor</h3>
+            <p>Dirtus McBaggus: A ton</p>
+          </div>
+        </div>
+        <div class="financial-charts">
+          <canvas id="financial-canvas" width="200" height="200"></canvas>
+          <div>
+            <h3>Top 5 Contibutors</h3>
+            <ol>
+              <li>{{Contributor.contributors[0]["@attributes"].org_name}}</li>
+              <li>{{Contributor.contributors[1]["@attributes"].org_name}}</li>
+              <li>{{Contributor.contributors[2]["@attributes"].org_name}}</li>
+              <li>{{Contributor.contributors[3]["@attributes"].org_name}}</li>
+              <li>{{Contributor.contributors[4]["@attributes"].org_name}}</li>
+            </ol>
+          </div>
+        </div>
+      </article>
+    </script>
 
     <script id="votesTemplate" type="text/x-handlebars-template">
-      <h1>Voting History</h1>
-      {{ each votes }}
-        <h2>Bill ID: {{billID}}</h2>
-        <h2>Position: {{position}}</h2>
-        <h2>Title: {{title}}
+      {{#each bills}}
+        <section class="general-info ">
+          <h2 class="bill-info">Title: {{title}}</h2>
+          <h2 class="bill-info">Position: {{position}}</h2>
+        </section>
       {{/each }}
     </script>
   </head>
@@ -30,25 +66,48 @@
 
       </section>
 
-      <section class="container" id="politician-view">
-        <div class="general-info">
-          <div class="poli-info">
-            <figure class="poli-picture">
-              <img src="images/trump.jpg" alt="trump">
-            </figure>
+      <section class="container">
+        <article class="poli-view">
+          <div class="general-info">
+            <div class="poli-info">
+              <figure class="poli-picture">
+                <img src="images/trump.jpg" alt="trump">
+              </figure>
+              <ul class="poli-details">
+                <li>Donald Trump</li>
+                <li>DOB: Dawn of time</li>
+                <li>Occupation</li>
+                <li>Elected: </li>
+              </ul>
+            </div>
+            <div class="largest-donor">
+              <h3>Largest Donor</h3>
+              <p>Dirtus McBaggus: A ton</p>
+            </div>
           </div>
-          <div class="largest-donor">
-            asdlfkjaslkdjf
+          <div class="financial-charts">
+            <canvas id="financial-canvas" width="200" height="200"></canvas>
+            <div>
+              <h3>Top 5 Contibutors</h3>
+              <ol>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+                <li>Test</li>
+              </ol>
+            </div>
           </div>
-        </div>
+        </article>
       </section>
 
       <section class="container" id="voting-view">
-        <section class="general-info">
-          <h1>Voting history should go here</h1>
-        </section>
+        <h1>Voting History</h1>
+
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+    <script src='scripts/bioController.js'></script>
+    <script src='scripts/bioView.js'></script>
     <script src="scripts/votingController.js"></script>
     <script src="scripts/votingView.js"></script>
     <script src="scripts/app.js"></script>
