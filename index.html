@@ -10,10 +10,10 @@
 
     <script id="votesTemplate" type="text/x-handlebars-template">
       <h1>Voting History</h1>
-      {{ each votes }}
+      {{#each bills}}
         <h2>Bill ID: {{billID}}</h2>
         <h2>Position: {{position}}</h2>
-        <h2>Title: {{title}}
+        <h2>Title: {{title}}</h2>
       {{/each }}
     </script>
   </head>
