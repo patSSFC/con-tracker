@@ -4,7 +4,17 @@ body {
     rgba(0, 0, 0, 0.65)
     ),
     url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Capitol1846.jpg');
-    background-size: cover;
+  background-size: cover;
+  color: #eee;
+}
+
+img {
+  width: 100%;
+}
+
+section {
+  max-width: 960px;
+  margin: 2em auto;
 }
 
 .container {
@@ -20,8 +30,24 @@ body {
   justify-content: center;
 }
 
-.general-info {
+.poli-info {
+  display: flex;
+  flex-direction: row;
+}
+
+figure.poli-picture {
+  width: 30%;
+  border-radius: 50%;
+}
+
+.general-info, .financial-charts {
   display: flex;
   flex-direction: row;
   justify-content: space-between;
 }
+
+/*.financial-charts {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}*/
