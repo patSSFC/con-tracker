@@ -1,5 +1,7 @@
 $('.searchBtn').on('click', function(){
   $('#searchTitle').slideUp("slow");
+  // var userInput = $('#searchField').val();
+
 });
 (function () {
   votingViews.loadVotes('B000574', votingViews.renderVotes);

@@ -207,7 +207,7 @@ $(function() {
       "Chavez, Rocky",
       "Chelgren, Mark",
       "Cheney, Liz",
-      "Cheng, Xiangfei "Scott"",
+      "Cheng, Xiangfei",
       "Chicon, Martin",
       "Choi, Jun",
       "Christensen, Gordon",
@@ -342,7 +342,7 @@ $(function() {
       "Donovan, Dan",
       "Douglas, Richard",
       "Doyle, Mike",
-      "Drabik, Gerald "Jerry"",
+      "Drabik, Gerald",
       "Driskell, Gretchen",
       "Duckworth, Tammy",
       "Duffie, Ryan",
@@ -1431,5 +1431,9 @@ $(function() {
     ];
     $( "#searchField" ).autocomplete({
       source: availableTags
+    });
+    $('.searchBtn').on('click', function(){
+        var userInput = $('#searchField').val();
+        console.log(userInput);
     });
   });
