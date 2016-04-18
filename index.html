@@ -4,10 +4,10 @@
     <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
     <link rel="stylesheet" href="styles/layout.css">
     <link rel="stylesheet" href="styles/modules.css">
-    <link rel='stylesheet' href='vendor/styles/jquery-ui.css'>
-    <link rel='stylesheet' href='vendor/styles/jquery-ui.structure.css'>
 
     <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <link rel='stylesheet' href='vendor/styles/jquery-ui.css'>
+    <link rel='stylesheet' href='vendor/styles/jquery-ui.structure.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="vendor/scripts/jquery-ui.js"></script>
@@ -71,7 +71,7 @@
 
       <section class='container' id='mainSearch'>
         <h1 id='searchTitle'>Find a politician</h1>
-        <div class='search-contain'>
+        <div id='ui-widget' class='search-contain'>
           <input id='searchField' class="search" placeholder="Search"/>
           <button class="searchBtn" data-sort="name">
             Search
@@ -125,6 +125,7 @@
         </section>
       </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+    <script src='scripts/search.js>'></script>
     <script src='scripts/bioController.js'></script>
     <script src='scripts/bioView.js'></script>
     <script src='scripts/financeController.js'></script>
