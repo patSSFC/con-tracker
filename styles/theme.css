@@ -1,0 +1,7 @@
+.search-section {
+  background-color: rgb(150, 2, 201);
+  max-width: 100%;
+  height: 700px; /* probably should not be hardcoded */
+  padding: 1%;
+  margin: -10px -10px 50px -10px;
+}
