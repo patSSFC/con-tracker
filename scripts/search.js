@@ -1,5 +1,4 @@
 $(function() {
-    console.log('moose')
     var availableTags = [
       "Abraham, Ralph",
       "Achadjian, Katcho",

@@ -49,6 +49,10 @@ figure.poli-picture {
   flex-direction: row;
   justify-content: space-between;
 }
+.ui-autocomplete {
+  background-color: white;
+  color: black;
+}
 
 /*.financial-charts {
   display: flex;
