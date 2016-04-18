@@ -35,6 +35,7 @@ figure.poli-picture img {
 @media only screen and (max-width: 660px) {
   .search-contain {
     flex-direction: column;
+    font-size: 0.75em;
   }
 
   .searchBtn {
