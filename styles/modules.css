@@ -21,6 +21,7 @@
   flex: 1 6 20%;
   -webkit-order: 1;
   order: 1;
+  color: #fff;
 }
 
 .right {
