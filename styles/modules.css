@@ -11,6 +11,9 @@
   display: inline-block;
   font-size: 3em;
   margin-left: .2em;
+  color: #fff;
+  background-color: rgb(150, 2, 201);
+  border: 0;
 }
 
 .bill-info {
