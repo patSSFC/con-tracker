@@ -40,7 +40,18 @@
   voteRepos.returnVotes = function (member, callback) {
     member = member;
     voteHistory = '/nyt_api/' + member + '/votes.json'; // Returns members last 100 votes.
+    console.log('my vote history :: ' + voteHistory);
     requestRepos(callback);
+  };
+
+  voteRepos.index = function (ctx, next) {
+    console.log('In the index');
+    votingViews.loadVotes(ctx.params.id, votingViews  .renderVotes);
+    next();
+  };
+
+  voteRepos.about = function (ctx, next) {
+    console.log('ABOUT!' + JSON.stringify(ctx));
   };
 
   module.voteRepos = voteRepos;
