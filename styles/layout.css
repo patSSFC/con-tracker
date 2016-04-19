@@ -53,6 +53,9 @@ figure.poli-picture {
   background-color: white;
   color: black;
 }
+.ui-autocomplete:hover {
+    
+}
 
 /*.financial-charts {
   display: flex;
