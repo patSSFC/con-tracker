@@ -4,6 +4,34 @@
   text-align: center;
 }
 
+.header {
+  /*background-color: rgb(187, 255, 89);*/
+  height: 5rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 1.25rem;
+  margin: 0px;
+  z-index: 999;
+  position: fixed;
+  background-color: rgb(150, 2, 201);
+  color: #fff;
+
+}
+
+.header-container {
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+}
+
+.header-container > h1{
+  margin: 0;
+}
+
 .search {
   font-size: 3em;
 }
