@@ -16,8 +16,7 @@
 
   votingViews.renderVotes = function (bills) {
     console.log('my votes :: ' + JSON.stringify(bills));
-    var b = setVoteColor(bills);
-    var ctx = { bills: b };
+    var ctx = { bills: setVoteColor(bills) };
     var template = Handlebars.compile($('#votesTemplate').text());
     $('#voting-view').append(template(ctx));
   };
