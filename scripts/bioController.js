@@ -1,50 +1,35 @@
-(function(module) {
+(function (module) {
+  var bio = {};
+  var fecID;
+  var bioHistory;
 
-  Filing.filings = [];
-  Filing.totalPerQuarter = [];
+  var buildBio = function (proto) { // Takes a legislator object and creates a new legislator object with specific properties.
+    var bioInfo = {};
+    bioInfo.twitter = 'http://www.twitter.com/' + proto.twitter_id;
+    bioInfo.title = proto.title + '. ' + proto.first_name + " " + proto.last_name + ' (' + proto.party + ')';
+    bioInfo.state = proto.state;
+    bioInfo.website = proto.website;
+    bioInfo.phone = proto.phone;
+    return bioInfo;
+  };
 
-  function Filing(file) {
-    for (var prop in file) {
-      if(file.hasOwnProperty(prop)) {
-        this[prop] = file[prop];
+  var requestRepos = function (callback) {
+    $.ajax({
+      url: bioHistory,
+      method: 'GET',
+    }).success(
+      function (data, message, xhr) {
+        bio.info = buildBio(data.results[0]);
       }
-    }
-  }
+    )
+    .done(callback);
+  };
 
-  Contributor.contributors = [];
+  bio.returnBio = function (member, callback) {
+      fecID = member;
+      bioHistory = '/sunlight_congress/' + fecID;
+      requestRepos(callback);
+  };
 
-  function Contributor(contrib) {
-    for (var prop in contrib) {
-      if(contrib.hasOwnProperty(prop)) {
-        this[prop] = contrib[prop];
-      }
-    }
-  }
-
-
-  var filingsRequest = "http://realtime.influenceexplorer.com/api//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168&apikey=a59f2c8227c949fe90f7ccb1c0cba86f";
-  var contribRequest = "http://www.opensecrets.org/api/?method=candContrib&cid=N00007360&cycle=2016&apikey=0250595e734190ea51d62e7b981ea2d5&output=json";
-
-  Filing.getFilings = function (next) {
-    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168&apikey=a59f2c8227c949fe90f7ccb1c0cba86f', function(data) {
-      Filing.filings = data.results;
-    }).done(function(data) {
-      Filing.totalPerQuarter = data.results.map(function(r) {
-        return r.tot_raised;
-      });
-      next();
-    });
-  }
-
-  Contributor.getContributors = function (next) {
-    $.getJSON('/opensecrets/?method=candContrib&cid=N00007360&cycle=2016&output=json', function(data) {
-      // console.log(data.response.contributors.contributor[0]["@attributes"]);
-      Contributor.contributors = data.response.contributors.contributor;
-    }).done(function() {
-      console.log(Contributor.contributors[0]["@attributes"].org_name);
-    });
-  }
-
-  Contributor.getContributors();
-  this.Filing = Filing;
+  module.bio = bio;
 })(window);
