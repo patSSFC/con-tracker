@@ -35,8 +35,8 @@
 
   var buildContributor = function(proto) {
     var contribInfo = {};
-    contribInfo.total = proto["@attributes"].total;
-    contribInfo.org_name = proto["@attributes"].org_name;
+    contribInfo.total = proto.total;
+    contribInfo.org_name = proto.org_name;
     return contribInfo;
   }
 
@@ -47,11 +47,12 @@
       // console.log(Contributor.contributors);
       var contribs = Contributor.contributors;
       contribs = contribs.map(function(c) {
-        return buildContributor(c);
+        return buildContributor(c["@attributes"]);
       })
       Contributor.contributors = contribs;
       console.log(Contributor.contributors);
-      next();
+      Contributor.toHtml();
+      // next();
       // Contributor.contributors = Contributor.contributors.map(function(c) {
       //   return c["@attributes"].org_name;
       // });
@@ -65,7 +66,7 @@
   //   $('.container').append(template(context));
   // }
 
-  Contributor.getContributors(Contributor.toHtml);
+  Contributor.getContributors();
   // Contributor.toHtml();
   this.Filing = Filing;
   this.Contributor = Contributor;

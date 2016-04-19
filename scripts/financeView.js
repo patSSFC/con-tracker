@@ -28,11 +28,11 @@ function createDoughnut () {
     });
 }
 Contributor.toHtml = function() {
-  var template = Handlebars.compile($('politician-view').text());
+  var template = Handlebars.compile($('#top10template').text());
   console.log(Contributor.contributors);
-  Contributor.context = Contributor.contributors
-  var context = {contributors: Contributor.context};
-  $('.container').append(template(context));
+  // Contributor.context = Contributor.contributors
+  var context = {contributors: Contributor.contributors};
+  $('.contributor-list').append(template(context));
 }
 
 Filing.getFilings(createDoughnut);

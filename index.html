@@ -21,11 +21,11 @@
               <img src="images/trump.jpg" alt="trump">
             </figure>
             <ul class="poli-details">
-              <li>{{bioInfo.title}}</li>
+              <!-- <li>{{bioInfo.title}}</li>
               <li>{{bioInfo.state}}</li>
               <li>{{bioInfo.website}}</li>
               <li>{{bioInfo.phone}}</li>
-              <li>{{bioInfo.twitter}}</li>
+              <li>{{bioInfo.twitter}}</li> -->
             </ul>
           </div>
           <div class="largest-donor">
@@ -43,13 +43,17 @@
               <li>{{Contributor.contributors[2]["@attributes"].org_name}}</li>
               <li>{{Contributor.contributors[3]["@attributes"].org_name}}</li>
               <li>{{Contributor.contributors[4]["@attributes"].org_name}}</li> -->
-              {{#each contributors}}
-              <li>{{org_name}}</li>
-              {{/each}}
+
             </ol>
           </div>
         </div>
       </article>
+    </script>
+
+    <script id="top10template" type="text/x-handlebars-template">
+      {{#each contributors}}
+      <li>{{org_name}} = ${{total}}</li>
+      {{/each}}
     </script>
 
     <script id="votesTemplate" type="text/x-handlebars-template">
@@ -108,13 +112,9 @@
           <div class="financial-charts">
             <canvas id="financial-canvas" width="200" height="200"></canvas>
             <div>
-              <h3>Top 5 Contibutors</h3>
-              <ol>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
-                <li>Test</li>
+              <h3>Top 10 Contibutors</h3>
+              <ol class="contributor-list">
+
               </ol>
             </div>
           </div>
