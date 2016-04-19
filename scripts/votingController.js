@@ -43,5 +43,15 @@
     requestRepos(callback);
   };
 
+  voteRepos.index = function (ctx, next) {
+    console.log('In the index');
+    votingViews.loadVotes(ctx.params.id, votingView.renderVotes);
+    next();
+  };
+
+  voteRepos.about = function (ctx, next) {
+    console.log('ABOUT!' + JSON.stringify(ctx));
+  };
+
   module.voteRepos = voteRepos;
 })(window);

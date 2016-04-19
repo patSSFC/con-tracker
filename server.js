@@ -19,9 +19,16 @@ var queryDB = function (req, res) {
   });
 };
 
-app.use(express.static(__dirname + '/'));
-app.get('/', function (req, res) {
-  res.sendFile(__dirname + '/index.html');
+// app.use(express.static(__dirname + '/'));
+// app.get('/', function (req, res) {
+//   res.sendFile(__dirname + '/index.html');
+// });
+//
+app.use(express.static('./'));
+
+app.get('*', function (request, response) {
+  console.log('New request:', request.url);
+  response.sendFile('index.html', { root: '.' });
 });
 
 app.get('/database/', queryDB);
