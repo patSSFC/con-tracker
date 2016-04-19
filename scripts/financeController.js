@@ -38,7 +38,11 @@
       // console.log(data.response.contributors.contributor[0]["@attributes"]);
       Contributor.contributors = data.response.contributors.contributor;
     }).done(function() {
-      console.log(Contributor.contributors[0]["@attributes"].org_name);
+      // console.log(Contributor.contributors[0]["@attributes"].org_name);
+      Contributor.contributors = Contributor.contributors.map(function(c) {
+        return c["@attributes"].org_name;
+      });
+      // console.log(Contributor.contributors);
     });
   }
 

@@ -33,11 +33,12 @@
           <div>
             <h3>Top 5 Contibutors</h3>
             <ol>
-              <li>{{Contributor.contributors[0]["@attributes"].org_name}}</li>
+              <!-- <li>{{Contributor.contributors[0]["@attributes"].org_name}}</li>
               <li>{{Contributor.contributors[1]["@attributes"].org_name}}</li>
               <li>{{Contributor.contributors[2]["@attributes"].org_name}}</li>
               <li>{{Contributor.contributors[3]["@attributes"].org_name}}</li>
-              <li>{{Contributor.contributors[4]["@attributes"].org_name}}</li>
+              <li>{{Contributor.contributors[4]["@attributes"].org_name}}</li> -->
+              {{#each contributor}}
             </ol>
           </div>
         </div>

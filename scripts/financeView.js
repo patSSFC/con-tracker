@@ -29,7 +29,9 @@ function createDoughnut () {
 }
 
 function populateContributors() {
-  // var template = 
+  var template = Handlebars.compile($(''))
+  var context = {contributors: Contributor.contributors};
+
 }
 
 Filing.getFilings(createDoughnut);
