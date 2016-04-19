@@ -27,11 +27,12 @@ function createDoughnut () {
       maintainAspectRatio: true
     });
 }
-
-function populateContributors() {
-  var template = Handlebars.compile($(''))
-  var context = {contributors: Contributor.contributors};
-
+Contributor.toHtml = function() {
+  var template = Handlebars.compile($('politician-view').text());
+  console.log(Contributor.contributors);
+  Contributor.context = Contributor.contributors
+  var context = {contributors: Contributor.context};
+  $('.container').append(template(context));
 }
 
 Filing.getFilings(createDoughnut);
