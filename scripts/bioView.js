@@ -2,13 +2,12 @@
   bioViews = {};
   bioViews.renderBio = function (bio) {
     var template = Handlebars.compile($('#bioTemplate').html());
-    return template(bio);
+    $('#bio-view').append(template(bio.info));
   };
 
-  bioViews.loadBio = function (member) {
+  bioViews.loadBio = function (member, callback) {
     bio.returnBio(member, function (data, message) {
-      console.log(JSON.stringify(data));
-      console.log(bio);
+      callback(bio);
     });
   };
 
