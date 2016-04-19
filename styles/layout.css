@@ -1,11 +1,7 @@
 body {
-  background: linear-gradient(
-    rgba(0, 0, 0, 0.65),
-    rgba(0, 0, 0, 0.65)
-    ),
-    url('https://upload.wikimedia.org/wikipedia/commons/7/7b/Capitol1846.jpg');
-    background-size: cover;
-    color: #fff;
+  font-family: 'Lato', sans-serif;
+  /* font-family: 'Roboto Slab', serif; */
+  color: #555;
 }
 
 img {
@@ -17,21 +13,30 @@ section {
   margin: 2em auto;
 }
 
-h1 {
-  color: #fff;
-}
-
 .container {
   display: flex;
   flex-direction: column;
   justify-content: center;
 }
 
+.bill-info-container{
+  margin: 1%;
+  padding: 1%;
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  justify-content: space-around;
+}
+
+
 .search-contain {
   max-width: 100%;
   display: flex;
   flex-direction: row;
   justify-content: center;
+  align-items: center;
+
 }
 
 .poli-info {
@@ -47,7 +52,7 @@ figure.poli-picture {
 .general-info, .financial-charts {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  /*justify-content: space-between;*/
 }
 .ui-autocomplete {
   background-color: white;

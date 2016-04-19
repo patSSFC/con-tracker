@@ -4,6 +4,34 @@
   text-align: center;
 }
 
+.header {
+  /*background-color: rgb(187, 255, 89);*/
+  height: 5rem;
+  max-width: 100%;
+  width: 100%;
+  padding: 1.25rem;
+  margin: 0px;
+  z-index: 999;
+  position: fixed;
+  background-color: rgb(150, 2, 201);
+  color: #fff;
+
+}
+
+.header-container {
+  display: -webkit-flex;
+  display:         flex;
+  -webkit-flex-flow: row;
+  flex-flow: row;
+  justify-content: space-between;
+  align-items: baseline;
+  margin: 0;
+}
+
+.header-container > h1{
+  margin: 0;
+}
+
 .search {
   font-size: 3em;
 }
@@ -11,11 +39,21 @@
   display: inline-block;
   font-size: 3em;
   margin-left: .2em;
+  color: #fff;
+  background-color: rgb(150, 2, 201);
+  border: 0;
 }
 
 .bill-info {
-  flex-direction: row;
-  min-width: 33%;
+  -webkit-flex: 1 6 20%;
+  flex: 1 6 20%;
+  -webkit-order: 1;
+  order: 1;
+  color: #fff;
+}
+
+.right {
+  text-align: right;
 }
 
 figure.poli-picture {
@@ -29,6 +67,7 @@ figure.poli-picture img {
 @media only screen and (max-width: 660px) {
   .search-contain {
     flex-direction: column;
+    font-size: 0.75em;
   }
 
   .searchBtn {
@@ -40,13 +79,13 @@ figure.poli-picture img {
 }
 
 @media (max-width: 550px) {
-  .container {
+  /*.container {
     margin-top: 20%;
-  }
+  }*/
 }
 
 @media only screen and (max-width: 400px) {
-  .container {
+  /*.container {
     margin-top: 50%;
-  }
+  }*/
 }
