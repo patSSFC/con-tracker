@@ -27,7 +27,7 @@
 
   bio.returnBio = function (member, callback) {
       fecID = member;
-      bioHistory = '/sunlight_congress/' + fecID;
+      bioHistory = '/sunlight_congress/legislators?fec_ids=' + fecID;
       requestRepos(callback);
   };
 

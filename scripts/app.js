@@ -1,5 +1,5 @@
 $('.searchBtn').on('click', function(){
-  $('#searchTitle').slideUp("slow");
+  $('.search-contain').slideUp("slow");
   // var userInput = $('#searchField').val();
 
 });
