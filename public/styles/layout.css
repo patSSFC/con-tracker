@@ -54,6 +54,13 @@ figure.poli-picture {
   flex-direction: row;
   /*justify-content: space-between;*/
 }
+.ui-autocomplete {
+  background-color: white;
+  color: black;
+}
+.ui-autocomplete:hover {
+    
+}
 
 /*.financial-charts {
   display: flex;
