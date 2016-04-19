@@ -2,11 +2,16 @@
 <html>
   <head>
     <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
-    <link rel="stylesheet" href="styles/layout.css">
-    <link rel="stylesheet" href="styles/modules.css">
-    <script src='https://code.jquery.com/jquery-2.2.1.min.js'></script>
+    <title>ConTraker 5000</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <link rel="stylesheet" href="vendor/normalize.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="styles/layout.css">
+    <link rel="stylesheet" href="styles/modules.css">
+    <link rel="stylesheet" href="styles/theme.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <script type="text/x-handlebars-template" id="politician-view">
       <article class="poli-view">
@@ -46,9 +51,9 @@
 
     <script id="votesTemplate" type="text/x-handlebars-template">
       {{#each bills}}
-        <section class="general-info ">
-          <h2 class="bill-info">Title: {{title}}</h2>
-          <h2 class="bill-info">Position: {{position}}</h2>
+        <section class=" bill-info-container {{positionClass}}">
+          <p class="bill-info ">{{title}}</p>
+          <p class="bill-info right">Position: {{position}}</p>
         </section>
       {{/each }}
     </script>
@@ -64,18 +69,20 @@
     </script>
   </head>
   <body>
-
-      <section class='container' id='mainSearch'>
-        <h1 id='searchTitle'>Find a politician</h1>
-        <div class='search-contain'>
-          <input id='searchField' class="search" placeholder="Search"/>
-          <button class="searchBtn" data-sort="name">
-            Search
+    <section class="header">
+      <section class="header-container">
+        <h1>Contracker</h1>
+      </section>
+    </section>
+    <section class="search-section">
+      <section class="container" id="mainSearch">
+        <div class="search-contain">
+          <input id="searchField" class="search" placeholder="Find a politician"/>
+          <button class="searchBtn ion-ios-search" data-sort="name" >
           </button>
         </div>
-
       </section>
-
+    </section>
       <section class="container">
         <article class="poli-view">
           <div class="general-info">
