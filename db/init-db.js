@@ -129,11 +129,11 @@ var dbInit = {
       type: 'varchar(255)',
     },
     {
-      name: 'firstname',
+      name: 'lastname',
       type: 'varchar(255)',
     },
     {
-      name: 'lastname',
+      name: 'firstname',
       type: 'varchar(255)',
     },
     {
@@ -221,6 +221,6 @@ var dbInit = {
 
 //dbInit.initTableWithRecords('./2016_legislators.csv');
 
-db.connect().query('SELECT * FROM politicians', function (err, data) {
-  console.log(data.rows);
-});
+// db.connect().query('SELECT * FROM politicians', function (err, data) {
+//   console.log(data.rows);
+// });
