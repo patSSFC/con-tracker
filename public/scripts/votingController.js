@@ -46,7 +46,7 @@
 
   voteRepos.index = function (ctx, next) {
     console.log('In the index');
-    votingViews.loadVotes(ctx.params.id, votingViews  .renderVotes);
+    votingViews.loadVotes(ctx.params.id, votingViews.renderVotes);
     next();
   };
 
