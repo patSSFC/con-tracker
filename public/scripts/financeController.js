@@ -7,7 +7,8 @@
   Contributor.contributors = [];
 
   Filing.getFilings = function (next) {
-    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168&apikey=a59f2c8227c949fe90f7ccb1c0cba86f', function(data) {
+    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
+    , function(data) {
     }).done(function(data) {
       Filing.totalPerQuarter = data.results.map(function(r) {
         return r.tot_raised;
