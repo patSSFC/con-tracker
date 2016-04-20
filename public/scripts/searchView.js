@@ -1,6 +1,6 @@
 (function(module){
   var results = {};
-  var resultsName = [];
+  var availableTags = [];
   results.all = [];
 
   results.requestRepos = function() {
@@ -12,6 +12,7 @@
         console.log(data);
         console.log(message);
         results.all = data;
+        results.compile();
       },
       error: function(data, status) {
         console.log(data);
@@ -22,12 +23,20 @@
   results.requestRepos();
   results.compile = function(){
     $(results.all.rows).each(function(i){
-      resultsName.push(results.all.rows[i].firstname + " " + results.all.rows[i].lastname)
+      availableTags.push(results.all.rows[i].firstname + " " + results.all.rows[i].lastname)
     });
-    // for (var i = 1; i < results.all.rows.length; i += 1) {
-    //   resultsName.push(results.all.rows[i].firstname + " " + results.all.rows[i].lastname)
-    // };
   };
+  $(function() {
+
+      $( "#searchField" ).autocomplete({
+        source: availableTags
+      });
+      $('.searchBtn').on('click', function(){
+          var userInput = $('#searchField').val();
+          console.log(userInput);
+      });
+    });
   module.results = results;
   module.resultsName = resultsName;
+  module.availableTags = availableTags;
 })(window);
