@@ -33,10 +33,18 @@
       });
       $('.searchBtn').on('click', function(){
           var userInput = $('#searchField').val();
+          $('.search-contain').fadeOut();
+          setTimeout(function() {
+            $('.header-container').append($('.search-contain'));
+
+          }, 400)
+          $('.search-contain').fadeIn('slow');
+          $('.search-section').delay(400).slideUp(1000);
+          $('.header').css('top', '0');
+          $('.poli-view').css('margin-top', '10em');
           console.log(userInput);
       });
     });
   module.results = results;
-  module.resultsName = resultsName;
   module.availableTags = availableTags;
 })(window);
