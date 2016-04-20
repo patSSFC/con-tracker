@@ -10,6 +10,18 @@
   overflow-y: hidden;
 }
 
+.democrat {
+  color: blue;
+}
+
+.republican {
+  color: red;
+}
+
+.other {
+  color: green;
+}
+
 .position-yes {
   background-color: rgb(130, 255, 135);
   border: 2px solid rgb(27, 194, 0);

@@ -10,6 +10,7 @@
     bioInfo.state = proto.state;
     bioInfo.website = proto.website;
     bioInfo.phone = proto.phone;
+    bioInfo.party = proto.party;
     return bioInfo;
   };
 
