@@ -31,14 +31,14 @@
         return r.tot_raised;
       });
     });
-  }
+  };
 
   var buildContributor = function(proto) {
     var contribInfo = {};
     contribInfo.total = proto.total;
     contribInfo.org_name = proto.org_name;
     return contribInfo;
-  }
+  };
 
   Contributor.getContributors = function (next) {
     $.getJSON('/opensecrets/?method=candContrib&cid=N00007360&cycle=2016&output=json', function(data) {
@@ -47,24 +47,13 @@
       // console.log(Contributor.contributors);
       var contribs = Contributor.contributors;
       contribs = contribs.map(function(c) {
-        return buildContributor(c["@attributes"]);
-      })
+        return buildContributor(c['@attributes']);
+      });
       Contributor.contributors = contribs;
       console.log(Contributor.contributors);
       Contributor.toHtml();
-      // next();
-      // Contributor.contributors = Contributor.contributors.map(function(c) {
-      //   return c["@attributes"].org_name;
-      // });
     });
-  }
-
-  // Contributor.toHtml = function() {
-  //   var template = Handlebars.compile($('politician-view').text());
-  //   console.log(Contributor.contributors);
-  //   var context = {contributors: Contributor.contributors};
-  //   $('.container').append(template(context));
-  // }
+  };
 
   Contributor.getContributors();
   // Contributor.toHtml();
