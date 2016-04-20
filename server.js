@@ -7,7 +7,7 @@ var apiProxy = require('./api-proxy.js');
 var queryDB = function (req, res) {
   var table = 'politicians';
   var q = req.query.query === undefined ? '*' : req.query.query;
-  var query = 'SELECT ' + q +  ' FROM ' + table;
+  var query = 'SELECT ' + q + ' FROM ' + table;
 
   db.connect().query(query, function (err, data) {
     if (err) {

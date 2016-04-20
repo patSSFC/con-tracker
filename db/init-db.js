@@ -168,7 +168,7 @@ var dbInit = {
           return "'" + field + "'";
         });
 
-        return 'INSERT INTO politicians VALUES (' +  modRec.join(', ') + ')';
+        return 'INSERT INTO politicians VALUES (' + modRec.join(', ') + ')';
       });
 
       dbInit.loopThroughRecords(insertQueries);
