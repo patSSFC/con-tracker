@@ -34,14 +34,19 @@
     </script>
 
     <script id="bioTemplate" type="text/x-handlebars-template">
-      <h1>{{title}} - {{state}}</h1>
-      <ul>
-        <li><a href="{{website}}">Website</a></li>
-        <li>|</li>
-        <li>{{phone}}</li>
-        <li>|</li>
-        <li><a href="{{twitter}}">Twitter</a></li>
-      </ul>
+      <figure class='poli-picture'>
+        <img src='{{image}}' alt='twitter pic' />
+      </figure>
+      <div>
+        <h1>{{title}} - {{state}}</h1>
+        <ul>
+          <li><a href="{{website}}">Website</a></li>
+          <li>|</li>
+          <li>{{phone}}</li>
+          <li>|</li>
+          <li><a href="{{twitter}}">Twitter</a></li>
+        </ul>
+      </div>
     </script>
 
   </head>
@@ -63,9 +68,6 @@
     </section>
 
     <section id="bio-style" class="container">
-      <figure class="poli-picture">
-        <img src="images/trump.jpg" alt="trump">
-      </figure>
       <div class="container" id="bio-view"></div>
     </section>
 

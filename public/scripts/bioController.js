@@ -11,6 +11,7 @@
     bioInfo.website = proto.website;
     bioInfo.phone = proto.phone;
     bioInfo.party = proto.party;
+    bioInfo.image = 'https://twitter.com/' + proto.twitter_id + '/profile_image?size=original';
     return bioInfo;
   };
 
