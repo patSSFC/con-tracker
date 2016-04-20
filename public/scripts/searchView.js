@@ -7,6 +7,7 @@
     var politicId = results.all.rows.filter(function (row) {
       return row.firstname + ' ' + row.lastname === name;
     }).map(function (row) {
+      console.log('NAMES:: ' + row.firstname + ' ' + row.lastname + ' :: ' + row.fec_id);
       return row.fec_id;
     });
 
