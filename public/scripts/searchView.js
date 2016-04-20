@@ -22,7 +22,7 @@
   results.requestRepos();
   results.compile = function(){
     $(results.all.rows).each(function(i){
-      resultsName.push(results.all.rows[i].firstname + " " + results.all.rows[i].lastname)
+      resultsName.push(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
     });
     // for (var i = 1; i < results.all.rows.length; i += 1) {
     //   resultsName.push(results.all.rows[i].firstname + " " + results.all.rows[i].lastname)

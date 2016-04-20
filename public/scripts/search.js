@@ -1431,8 +1431,8 @@ $(function() {
     $( "#searchField" ).autocomplete({
       source: availableTags
     });
-    $('.searchBtn').on('click', function(){
-        var userInput = $('#searchField').val();
-        console.log(userInput);
-    });
+  $('.searchBtn').on('click', function(){
+    var userInput = $('#searchField').val();
+    console.log(userInput);
   });
+});
