@@ -14,14 +14,14 @@
         return r.tot_raised;
       });
     });
-  }
+  };
 
   var buildContributor = function(proto) {
     var contribInfo = {};
     contribInfo.total = proto.total;
     contribInfo.org_name = proto.org_name;
     return contribInfo;
-  }
+  };
 
   Contributor.getContributors = function (next) {
     $.getJSON('/opensecrets/?method=candContrib&cid=N00007360&cycle=2016&output=json', function(data) {
@@ -29,13 +29,13 @@
     }).done(function(data, message, xhr) {
       var contribs = Contributor.contributors;
       contribs = contribs.map(function(c) {
-        return buildContributor(c["@attributes"]);
-      })
+        return buildContributor(c['@attributes']);
+      });
       Contributor.contributors = contribs;
       console.log(Contributor.contributors);
       Contributor.toHtml();
     });
-  }
+  };
 
   Contributor.getContributors();
   this.Filing = Filing;
