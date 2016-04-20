@@ -18,10 +18,27 @@
     <link rel="stylesheet" href="../styles/theme.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script id="top10template" type="text/x-handlebars-template">
-      {{#each contributors}}
-        <li>{{org_name}} = ${{total}}</li>
-      {{/each}}
+
+    <script id="bioTemplate" type="text/x-handlebars-template">
+      <figure class='poli-picture'>
+        <img src='{{info.image}}' alt='twitter pic' />
+      </figure>
+      <div>
+        <h1>{{info.title}} - {{info.state}}</h1>
+        <ul>
+          <li><a href="{{info.website}}">Website</a></li>
+          <li>|</li>
+          <li>{{info.phone}}</li>
+          <li>|</li>
+          <li><a href="{{info.twitter}}">Twitter</a></li>
+        </ul>
+        <ul>
+          <!-- may have to be contributor.total, etc. -->
+          {{#each contributor.contributors}}
+            <li>{{org_name}} = ${{total}}</li>
+          {{/each}}
+        </ul>
+      </div>
     </script>
 
     <script id="votesTemplate" type="text/x-handlebars-template">
@@ -31,22 +48,6 @@
           <p class="bill-info right">Position: {{position}}</p>
         </section>
       {{/each }}
-    </script>
-
-    <script id="bioTemplate" type="text/x-handlebars-template">
-      <figure class='poli-picture'>
-        <img src='{{image}}' alt='twitter pic' />
-      </figure>
-      <div>
-        <h1>{{title}} - {{state}}</h1>
-        <ul>
-          <li><a href="{{website}}">Website</a></li>
-          <li>|</li>
-          <li>{{phone}}</li>
-          <li>|</li>
-          <li><a href="{{twitter}}">Twitter</a></li>
-        </ul>
-      </div>
     </script>
 
   </head>
@@ -87,10 +88,10 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     <script src='../scripts/search.js'></script>
     <script src="../scripts/searchView.js"></script>
-    <script src="../scripts/bioController.js"></script>
-    <script src="../scripts/bioView.js"></script>
     <script src="../scripts/financeController.js"></script>
     <script src="../scripts/financeView.js"></script>
+    <script src="../scripts/bioController.js"></script>
+    <script src="../scripts/bioView.js"></script>
     <script src="../scripts/votingView.js"></script>
     <script src="../scripts/votingController.js"></script>
     <script src="../scripts/app.js"></script>
