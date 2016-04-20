@@ -85,6 +85,9 @@ figure.poli-picture img {
 }
 
 @media only screen and (max-width: 400px) {
+  .header-container {
+    flex-flow: column;
+  }
   /*.container {
     margin-top: 50%;
   }*/
