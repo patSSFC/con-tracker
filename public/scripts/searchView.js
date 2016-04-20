@@ -10,7 +10,7 @@
       return row.fec_id;
     });
 
-    console.log(politicId);
+    // console.log(politicId);
   };
 
   results.requestRepos = function () {

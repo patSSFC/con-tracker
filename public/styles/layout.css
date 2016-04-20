@@ -59,8 +59,10 @@ figure.poli-picture {
   color: black;
   margin-top: 5em;
 }
-.ui-autocomplete:hover {
 
+.ui-menu-item:hover {
+  background-color: black;
+  color: white;
 }
 /*.ui-menu{
   background-color: blue;
