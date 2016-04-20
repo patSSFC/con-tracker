@@ -19,6 +19,10 @@ section {
   justify-content: center;
 }
 
+#bio-style {
+  flex-direction: row;
+}
+
 .bill-info-container{
   margin: 1%;
   padding: 1%;
@@ -59,7 +63,7 @@ figure.poli-picture {
   color: black;
 }
 .ui-autocomplete:hover {
-    
+
 }
 
 /*.financial-charts {
