@@ -29,6 +29,8 @@
       Filing.totalPerQuarter = data.results.map(function(r) {
         return r.tot_raised;
       });
+      console.log(Filing.totalPerQuarter);
+      financeViews.createDoughnut();
     });
   };
 
@@ -48,7 +50,7 @@
         return buildContributor(c['@attributes']);
       });
       Contributor.contributors = contribs;
-      Contributor.toHtml();
+      financeViews.toHtml();
     });
   };
 
