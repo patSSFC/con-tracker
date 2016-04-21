@@ -27,7 +27,7 @@
     }).success(
       function (data, message, xhr) {
         var storage = data.results[0].votes;
-        console.log("VOTES :: " + JSON.stringify(storage));
+        console.log('VOTES :: ' + JSON.stringify(storage));
         voteRepos.all = [];
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
@@ -57,20 +57,20 @@
       url:'/sunlight_congress/legislators?crp_id=' + ctx.crpId + '&all_legislators=true',
       type: 'GET',
     }).success(function(data, message, xhr){
-      console.log("bioguideID " + data);
-      console.log("bioguide message " + message);
+      console.log('bioguideID ' + data);
+      console.log('bioguide message ' + message);
       if (data.results[0]){
-        ctx.bioguideId = data.results[0].bioguide_id
-        next()
+        ctx.bioguideId = data.results[0].bioguide_id;
+        next();
       } else {
         console.log('no bioguide id');
-        next()
+        next();
       }
-    })
+    });
   };
 
   voteRepos.getCRPID = function (ctx, next) {
-    console.log("FEC ID" + ctx.params.id);
+    console.log('FEC ID' + ctx.params.id);
 
     $.ajax({
       url: '/database/',
@@ -78,19 +78,19 @@
     }).success(
       function (data, message, xhr) {
         ctx.crpId = data.rows.filter(function(row){
-          return row.fec_id === ctx.params.id
+          return row.fec_id === ctx.params.id;
         }).map(function(row){
-          return row.crp
-        })
-        console.log("CRP::: " + ctx.crpId);
-        next()
+          return row.crp;
+        });
+        console.log('CRP::: ' + ctx.crpId);
+        next();
       }).error(
         function (data, status) {
           console.log(data);
           console.log(status);
-          next()
-        })
-  }
+          next();
+        });
+  };
 
 
   voteRepos.about = function (ctx, next) {

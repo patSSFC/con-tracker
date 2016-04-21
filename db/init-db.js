@@ -200,14 +200,16 @@ var dbInit = {
             arrRecord = rec.split(',');
             modRecord = arrRecord.map(function (field) {
               console.log('my field ' + field);
-              return "'" + field.trim() + "'";
+              return '\'' + field.trim() + '\'';
             });
 
             console.log('my arrRecord' + modRecord);
-            dbInit.loopThroughRecords(['INSERT INTO politicians VALUES (' +  modRecord.join(', ') + ')']);
+            dbInit.loopThroughRecords(['INSERT INTO politicians VALUES (' + modRecord.join(', ') + ')']);
 
           });
         }
+
+        return 'INSERT INTO politicians VALUES (' + modRec.join(', ') + ')';
 
       });
 

@@ -34,6 +34,7 @@
 .search {
   font-size: 3em;
 }
+
 .searchBtn {
   display: inline-block;
   font-size: 3em;
@@ -41,6 +42,17 @@
   color: #fff;
   background-color: rgb(150, 2, 201);
   border: 0;
+}
+
+#bio-view ul {
+  list-style-type: none;
+  display: flex;
+  flex-direction: row;
+}
+
+#bio-view ul, #bio-view a {
+  color: black;
+  text-decoration: none;
 }
 
 .bill-info {

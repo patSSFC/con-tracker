@@ -37,6 +37,7 @@
     $(results.all.rows).each(function (i) {
       availableTags.push(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
       getFecId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
+
     });
   };
 
@@ -50,9 +51,9 @@
 
       $('.search-contain').fadeOut();
       setTimeout(function () {
-          $('.header-container').append($('.search-contain'));
+        $('.header-container').append($('.search-contain'));
 
-        }, 400);
+      }, 400);
 
       $('.search-contain').fadeIn('slow');
       $('.search-section').delay(400).slideUp(1000);
