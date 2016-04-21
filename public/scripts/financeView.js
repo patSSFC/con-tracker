@@ -4,6 +4,7 @@
   financeViews.chartDataSet = [];
 
   console.log(Filing.totalPerQuarter);
+
   financeViews.createDoughnut = function () {
     // buildChartData();
     console.log(Filing.totalPerQuarter);
@@ -39,6 +40,6 @@
   };
 
   this.financeViews = financeViews;
-  Filing.getFilings(financeViews.createDoughnut);
+  Filing.getFilings("blah", financeViews.createDoughnut);
   Contributor.getContributors(financeViews.toHtml);
 })(window);

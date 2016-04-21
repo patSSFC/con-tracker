@@ -16,7 +16,7 @@
     return filingInfo;
   };
 
-  Filing.getFilings = function (next) {$.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
+  Filing.getFilings = function (ctx, next) {$.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
     , function(data) {
     }).success(function(data) {
       console.log(data.results);
@@ -28,6 +28,7 @@
       // financeViews.createDoughnut();
       next();
     });
+    // next();
   };
 
   var buildContributor = function(proto) {
