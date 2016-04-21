@@ -24,7 +24,7 @@
         <img src='{{info.image}}' alt='twitter pic' />
       </figure>
       <div>
-        <h1>{{info.title}} - {{info.state}}</h1>
+        <h1 id='fullTitle'>{{info.title}} - {{info.state}}</h1>
         <ul>
           <li><a href="{{info.website}}">Website</a></li>
           <li>|</li>
@@ -32,12 +32,15 @@
           <li>|</li>
           <li><a href="{{info.twitter}}">Twitter</a></li>
         </ul>
-        <ul>
-          <!-- may have to be contributor.total, etc. -->
-          {{#each contributor.contributors}}
-            <li>{{org_name}} = ${{total}}</li>
-          {{/each}}
-        </ul>
+
+        <div class="financial-charts">
+          <ol class="contributor-list">
+            <h3>Top 10 Contibutors</h3>
+            {{#each contributor.contributors}}
+              <li>{{org_name}} = ${{total}}</li>
+            {{/each}}
+          </ol>
+        </div>
       </div>
     </script>
 
@@ -71,15 +74,6 @@
     <section id="bio-style" class="container">
       <div class="container" id="bio-view"></div>
     </section>
-
-
-    <div class="financial-charts">
-      <canvas id="financial-canvas" width="200" height="200"></canvas>
-      <div>
-        <h3>Top 10 Contibutors</h3>
-        <ol class="contributor-list"></ol>
-      </div>
-    </div>
 
     <section class="container" id="voting-view">
       <h1>Voting History</h1>
