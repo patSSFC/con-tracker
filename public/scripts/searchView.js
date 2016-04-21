@@ -46,23 +46,14 @@
       source: availableTags,
     });
     $('.searchBtn').on('click', function (a) {
-      // a.preventDefault();
+      a.preventDefault();
       var userInput = $('#searchField').val();
-
-      $('.search-contain').fadeOut();
-      setTimeout(function () {
-          $('.header-container').append($('.search-contain'));
-
-        }, 400);
-
-      $('.search-contain').fadeIn('slow');
-      $('.search-section').delay(400).slideUp(1000);
-      $('.header').css('top', '0');
-      $('.poli-view').css('margin-top', '10em');
-      console.log(userInput);
-
       var fecid = getFecId(userInput) || '';
       page('/politicians/' + fecid[0]);
+
+
+      console.log(userInput);
+
     });
   });
 
