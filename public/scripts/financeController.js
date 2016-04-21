@@ -2,18 +2,33 @@
 
   Filing = {};
   Filing.totalPerQuarter = [];
+  Filing.all = [];
 
   Contributor = {};
   Contributor.contributors = [];
 
-  Filing.getFilings = function (next) {
-    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
+  var buildFiling = function(raw) {
+    var filingInfo = {};
+    filingInfo.committee_name = raw.committee_name;
+    filingInfo.filed_date = raw.filed_date;
+    filingInfo.tot_raised = raw.tot_raised;
+    filingInfo.tot_spent = raw.tot_spent;
+    return filingInfo;
+  };
+
+  Filing.getFilings = function (ctx, next) {$.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
     , function(data) {
-    }).done(function(data) {
-      Filing.totalPerQuarter = data.results.map(function(r) {
-        return r.tot_raised;
+    }).success(function(data) {
+      console.log(data.results);
+      // Filing.all = data.results;
+      Filing.all = data.results.map(function(r) {
+        return buildFiling(r);
       });
+      console.log(Filing.all);
+      // financeViews.createDoughnut();
+      next();
     });
+    // next();
   };
 
   var buildContributor = function(proto) {
@@ -32,12 +47,13 @@
         return buildContributor(c['@attributes']);
       });
       Contributor.contributors = contribs;
-      console.log(Contributor.contributors);
-      Contributor.toHtml();
+      // financeViews.toHtml();
+      next();
     });
   };
 
-  Contributor.getContributors();
+  // Filing.getFilings(financeViews.createDoughnut);
+  // Contributor.getContributors(financeViews.toHtml);
   this.Filing = Filing;
   this.Contributor = Contributor;
 })(window);

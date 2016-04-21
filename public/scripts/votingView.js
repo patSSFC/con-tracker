@@ -10,7 +10,6 @@
 
       return bill;
     });
-
     return b;
   };
 

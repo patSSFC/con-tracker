@@ -96,6 +96,5 @@
   voteRepos.about = function (ctx, next) {
     console.log('ABOUT!' + JSON.stringify(ctx));
   };
-
   module.voteRepos = voteRepos;
 })(window);
