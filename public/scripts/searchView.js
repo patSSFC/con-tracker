@@ -47,7 +47,6 @@
     });
     $('.searchBtn').on('click', function () {
       var userInput = $('#searchField').val();
-      var fecid = getFecId(userInput) || '';
 
       $('.search-contain').fadeOut();
       setTimeout(function () {
@@ -60,6 +59,7 @@
       $('.header').css('top', '0');
       $('.poli-view').css('margin-top', '10em');
       console.log(userInput);
+      var fecid = getFecId(userInput) || '';
       page('/politicians/' + fecid[0]);
     });
   });
