@@ -11,12 +11,22 @@
     }
   };
 
+  var verifyProperty = function(contact) {
+    contact.forEach(function(ele) {
+      if (!ele[1]) {
+        $('#' + ele[0]).addClass('hide');
+      }
+    });
+  };
 
   bioViews.renderBio = function (bio) {
     var template = Handlebars.compile($('#bioTemplate').html());
     $('#bio-view').append(template(bio));
     $('#fullTitle').addClass(partyColor(bio.info.party));
+    // verifyProperty(bio.info.contact);
   };
+
+
 
 
   bioViews.loadBio = function (member, callback) {

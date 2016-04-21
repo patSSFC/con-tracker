@@ -23,6 +23,10 @@ section {
   flex-direction: row;
 }
 
+.hide {
+  display: none;
+}
+
 .bill-info-container{
   margin: 1%;
   padding: 1%;
