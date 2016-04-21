@@ -6,8 +6,8 @@
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
     <script src="../vendor/scripts/jquery-ui.js"></script>
-    <link rel="stylesheet" href="../vendor/styles/jquery-ui.css">
-    <link rel="stylesheet" href="../vendor/styles/jquery-ui.structure.css">
+    <link rel='stylesheet' href='../vendor/styles/jquery-ui.css'>
+    <link rel='stylesheet' href='../vendor/styles/jquery-ui.structure.css'>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
@@ -18,10 +18,30 @@
     <link rel="stylesheet" href="../styles/theme.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <script id="top10template" type="text/x-handlebars-template">
-      {{#each contributors}}
-        <li>{{org_name}} = ${{total}}</li>
-      {{/each}}
+
+    <script id="bioTemplate" type="text/x-handlebars-template">
+      <figure class='poli-picture'>
+        <img src='{{info.image}}' alt='twitter pic' />
+      </figure>
+      <div>
+        <h1 id='fullTitle'>{{info.title}} - {{info.state}}</h1>
+        <ul>
+          <li><a href="{{info.website}}">Website</a></li>
+          <li>|</li>
+          <li>{{info.phone}}</li>
+          <li>|</li>
+          <li><a href="{{info.twitter}}">Twitter</a></li>
+        </ul>
+
+        <div class="financial-charts">
+          <ol class="contributor-list">
+            <h3>Top 10 Contibutors</h3>
+            {{#each contributor.contributors}}
+              <li>{{org_name}} = ${{total}}</li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
     </script>
 
     <script id="votesTemplate" type="text/x-handlebars-template">
@@ -31,17 +51,6 @@
           <p class="bill-info right">Position: {{position}}</p>
         </section>
       {{/each }}
-    </script>
-
-    <script id="bioTemplate" type="text/x-handlebars-template">
-      <h1>{{title}} - {{state}}</h1>
-      <ul>
-        <li><a href="{{website}}">Website</a></li>
-        <li>|</li>
-        <li>{{phone}}</li>
-        <li>|</li>
-        <li><a href="{{twitter}}">Twitter</a></li>
-      </ul>
     </script>
 
   </head>
@@ -63,33 +72,19 @@
     </section>
 
     <section id="bio-style" class="container">
-      <figure class="poli-picture">
-        <img src="images/trump.jpg" alt="trump">
-      </figure>
       <div class="container" id="bio-view"></div>
     </section>
-
-
-    <div class="financial-charts">
-      <canvas id="financial-canvas" width="200" height="200"></canvas>
-      <div>
-        <h3>Top 10 Contibutors</h3>
-        <ol class="contributor-list"></ol>
-      </div>
-    </div>
 
     <section class="container" id="voting-view">
       <h1>Voting History</h1>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
-    <script src='../scripts/search.js'></script>
     <script src="../scripts/searchView.js"></script>
-    <script src="../scripts/bioController.js"></script>
-    <script src="../scripts/bioView.js"></script>
-    <!-- <script src="../scripts/financeView.js"></script> -->
     <script src="../scripts/financeController.js"></script>
     <script src="../scripts/financeView.js"></script>
+    <script src="../scripts/bioController.js"></script>
+    <script src="../scripts/bioView.js"></script>
     <script src="../scripts/votingView.js"></script>
     <script src="../scripts/votingController.js"></script>
     <script src="../scripts/app.js"></script>

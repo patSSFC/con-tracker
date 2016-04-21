@@ -14,10 +14,9 @@
 
   bioViews.renderBio = function (bio) {
     var template = Handlebars.compile($('#bioTemplate').html());
-    $('#bio-view').append(template(bio.info));
-    $('#bio-view').addClass(partyColor(bio.info.party));
+    $('#bio-view').append(template(bio));
+    $('#fullTitle').addClass(partyColor(bio.info.party));
   };
-
 
 
   bioViews.loadBio = function (member, callback) {

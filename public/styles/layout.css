@@ -19,7 +19,7 @@ section {
   justify-content: center;
 }
 
-#bio-style {
+#bio-view {
   flex-direction: row;
 }
 
@@ -61,10 +61,20 @@ figure.poli-picture {
 .ui-autocomplete {
   background-color: white;
   color: black;
+  margin-top: 5em;
 }
-.ui-autocomplete:hover {
+
+
+.ui-menu-item:hover {
+  background-color: black;
+  color: white;
+}
 
 }
+/*.ui-menu{
+  background-color: blue;
+  position: absolute;
+}*/
 
 /*.financial-charts {
   display: flex;

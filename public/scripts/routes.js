@@ -1,5 +1,6 @@
 // page('/', app.initIndexPage);
 console.log('LOADING ROUTES');
-page('/politicians/:id', voteRepos.index);
-// page('/politicians/:id', )
+page('/', results.compile);
+page('/about', voteRepos.about);
+page('/politicians/:id', voteRepos.getCRPID, voteRepos.getBioID, voteRepos.index);
 page();
