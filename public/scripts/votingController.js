@@ -28,6 +28,7 @@
       function (data, message, xhr) {
         var storage = data.results[0].votes;
         console.log("VOTES :: " + JSON.stringify(storage));
+        voteRepos.all = [];
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
             voteRepos.all.push(buildBill(storage[i]));
