@@ -31,7 +31,7 @@
       maintainAspectRatio: true
     });
   };
-
+  
   financeViews.toHtml = function() {
     var template = Handlebars.compile($('#top10template').text());
     var context = {contributors: Contributor.contributors};
@@ -39,4 +39,5 @@
   };
 
   this.financeViews = financeViews;
+
 })(window);
