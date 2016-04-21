@@ -3,20 +3,8 @@
   var member;
   var voteHistory;
   var votesArray = ['S J RES 23', 'H R 1927', 'H R 2130', 'H R 1644']; // Specific bills we want to store
-  var bioID;
 
   voteRepos.all = [];
-
-  var bioguideID = function (fecid){
-    $.ajax({
-      url:'/sunlight_congress/legislators?fec_ids=' + fecid,
-      type: 'GET',
-    }).success(function(data, message, xhr){
-      console.log("bioguideID " + data);
-      console.log("bioguide message " + message);
-      bioID = data.results[0].bioguide_id || '';
-    })
-  }
 
   var findBill = function (targetArray, targetBill) {
     return targetBill.question === 'On Passage' && // 'On Passage' means they're voting to pass the bill.
@@ -39,6 +27,7 @@
     }).success(
       function (data, message, xhr) {
         var storage = data.results[0].votes;
+        console.log("VOTES :: " + JSON.stringify(storage));
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
             voteRepos.all.push(buildBill(storage[i]));
@@ -58,10 +47,50 @@
 
   voteRepos.index = function (ctx, next) {
     console.log('In the index');
-    bioguideID(ctx.params.id)
-    votingViews.loadVotes(bioID , votingViews.renderVotes);
+    votingViews.loadVotes(ctx.bioguideId , votingViews.renderVotes);
     next();
   };
+
+  voteRepos.getBioID = function (ctx, next){
+    $.ajax({
+      url:'/sunlight_congress/legislators?crp_id=' + ctx.crpId + '&all_legislators=true',
+      type: 'GET',
+    }).success(function(data, message, xhr){
+      console.log("bioguideID " + data);
+      console.log("bioguide message " + message);
+      if (data.results[0]){
+        ctx.bioguideId = data.results[0].bioguide_id
+        next()
+      } else {
+        console.log('no bioguide id');
+        next()
+      }
+    })
+  };
+
+  voteRepos.getCRPID = function (ctx, next) {
+    console.log("FEC ID" + ctx.params.id);
+
+    $.ajax({
+      url: '/database/',
+      type: 'GET'
+    }).success(
+      function (data, message, xhr) {
+        ctx.crpId = data.rows.filter(function(row){
+          return row.fec_id === ctx.params.id
+        }).map(function(row){
+          return row.crp
+        })
+        console.log("CRP::: " + ctx.crpId);
+        next()
+      }).error(
+        function (data, status) {
+          console.log(data);
+          console.log(status);
+          next()
+        })
+  }
+
 
   voteRepos.about = function (ctx, next) {
     console.log('ABOUT!' + JSON.stringify(ctx));
