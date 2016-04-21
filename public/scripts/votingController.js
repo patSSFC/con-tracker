@@ -3,8 +3,20 @@
   var member;
   var voteHistory;
   var votesArray = ['S J RES 23', 'H R 1927', 'H R 2130', 'H R 1644']; // Specific bills we want to store
+  var bioID;
 
   voteRepos.all = [];
+
+  var bioguideID = function (fecid){
+    $.ajax({
+      url:'/sunlight_congress/legislators?fec_ids=' + fecid,
+      type: 'GET',
+    }).success(function(data, message, xhr){
+      console.log("bioguideID " + data);
+      console.log("bioguide message " + message);
+      bioID = data.results[0].bioguide_id;
+    })
+  }
 
   var findBill = function (targetArray, targetBill) {
     return targetBill.question === 'On Passage' && // 'On Passage' means they're voting to pass the bill.
@@ -46,7 +58,8 @@
 
   voteRepos.index = function (ctx, next) {
     console.log('In the index');
-    votingViews.loadVotes(ctx.params.id, votingViews  .renderVotes);
+    bioguideID(ctx.params.id)
+    votingViews.loadVotes(bioID, votingViews.renderVotes);
     next();
   };
 

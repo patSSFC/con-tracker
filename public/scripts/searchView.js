@@ -3,27 +3,15 @@
   var availableTags = [];
   results.all = [];
 
-  var getPoliticId = function (name) {
-    var politicId = results.all.rows.filter(function (row) {
+  var getFecId = function (name) {
+    var fecId = results.all.rows.filter(function (row) {
       return row.firstname + ' ' + row.lastname === name;
     }).map(function (row) {
       return row.fec_id;
     });
 
-    return politicId;
-
+    return fecId;
   };
-
-  var bioguideID = function (fecid){
-    $.ajax({
-      url:'/sunlight_congress/legislators?fec_ids=' + fecid,
-      type: 'GET',
-      succes: function(data, message, xhr){
-        console.log("bioguideID " + data);
-        console.log("bioguide message " + message);
-      }
-    })
-  }
 
   results.requestRepos = function () {
     $.ajax({
@@ -48,7 +36,7 @@
   results.compile = function () {
     $(results.all.rows).each(function (i) {
       availableTags.push(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
-      getPoliticId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
+      getFecId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
     });
   };
 
@@ -59,8 +47,7 @@
     });
     $('.searchBtn').on('click', function () {
       var userInput = $('#searchField').val();
-      var fecid = getPoliticId(userInput);
-      var bioID = bioguideID(userInput, fecid)
+      var fecid = getFecId(userInput) || '';
 
       $('.search-contain').fadeOut();
       setTimeout(function () {
