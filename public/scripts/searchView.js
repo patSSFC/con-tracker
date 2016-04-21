@@ -3,16 +3,14 @@
   var availableTags = [];
   results.all = [];
 
-  var getPoliticId = function (name) {
-    var politicId = results.all.rows.filter(function (row) {
+  var getFecId = function (name) {
+    var fecId = results.all.rows.filter(function (row) {
       return row.firstname + ' ' + row.lastname === name;
     }).map(function (row) {
-      //console.log('NAMES:: ' + row.firstname + ' ' + row.lastname + ' :: ' + row.fec_id);
       return row.fec_id;
     });
 
-    return politicId;
-
+    return fecId;
   };
 
   results.requestRepos = function () {
@@ -38,7 +36,7 @@
   results.compile = function () {
     $(results.all.rows).each(function (i) {
       availableTags.push(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
-      getPoliticId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
+      getFecId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
     });
   };
 
@@ -49,8 +47,6 @@
     });
     $('.searchBtn').on('click', function (a) {
       // a.preventDefault();
-      var fecid = getPoliticId(userInput) || '';
-      page('/politicians/' + fecid[0]);
       var userInput = $('#searchField').val();
 
       $('.search-contain').fadeOut();
@@ -64,6 +60,9 @@
       $('.header').css('top', '0');
       $('.poli-view').css('margin-top', '10em');
       console.log(userInput);
+
+      var fecid = getFecId(userInput) || '';
+      page('/politicians/' + fecid[0]);
     });
   });
 
