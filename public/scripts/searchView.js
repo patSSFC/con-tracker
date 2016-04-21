@@ -47,9 +47,12 @@
     $('#searchField').autocomplete({
       source: availableTags,
     });
-    $('.searchBtn').on('click', function () {
+    $('.searchBtn').on('click', function (a) {
+      // a.preventDefault();
+      var fecid = getPoliticId(userInput) || '';
+      page('/politicians/' + fecid[0]);
       var userInput = $('#searchField').val();
-      var fecid = getPoliticId(userInput);
+
       $('.search-contain').fadeOut();
       setTimeout(function () {
           $('.header-container').append($('.search-contain'));
@@ -61,7 +64,6 @@
       $('.header').css('top', '0');
       $('.poli-view').css('margin-top', '10em');
       console.log(userInput);
-      page('/politicians/' + fecid[0]);
     });
   });
 
