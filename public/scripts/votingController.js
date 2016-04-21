@@ -14,7 +14,7 @@
     }).success(function(data, message, xhr){
       console.log("bioguideID " + data);
       console.log("bioguide message " + message);
-      bioID = data.results[0].bioguide_id;
+      bioID = data.results[0].bioguide_id || '';
     })
   }
 
@@ -59,7 +59,7 @@
   voteRepos.index = function (ctx, next) {
     console.log('In the index');
     bioguideID(ctx.params.id)
-    votingViews.loadVotes(bioID, votingViews.renderVotes);
+    votingViews.loadVotes(bioID , votingViews.renderVotes);
     next();
   };
 
