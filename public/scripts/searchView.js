@@ -37,6 +37,7 @@
     $(results.all.rows).each(function (i) {
       availableTags.push(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
       getFecId(results.all.rows[i].firstname + ' ' + results.all.rows[i].lastname);
+
     });
   };
 
@@ -50,6 +51,7 @@
       var userInput = $('#searchField').val();
       var fecid = getFecId(userInput) || '';
       page('/politicians/' + fecid[0]);
+
 
 
       console.log(userInput);
