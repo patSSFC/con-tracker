@@ -11,7 +11,7 @@
     }
   };
 
-  var verifyProperty = function(contact) {
+  var verifyProperty = function(contact) { // Is this working?
     contact.forEach(function(ele) {
       if (!ele[1]) {
         $('#' + ele[0]).addClass('hide');
