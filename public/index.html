@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>ConTraker 5000</title>
+    <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../vendor/scripts/jquery-ui.js"></script>
+    <link rel='stylesheet' href='../vendor/styles/jquery-ui.css'>
+    <link rel='stylesheet' href='../vendor/styles/jquery-ui.structure.css'>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/1.0.2/Chart.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <script src="https://cdn.rawgit.com/visionmedia/page.js/master/page.js"></script>
+    <link rel="stylesheet" href="../vendor/normalize.css">
+    <link rel="stylesheet" href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+    <link rel="stylesheet" href="../styles/layout.css">
+    <link rel="stylesheet" href="../styles/modules.css">
+    <link rel="stylesheet" href="../styles/theme.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+    <script id="bioTemplate" type="text/x-handlebars-template">
+      <figure class='poli-picture'>
+        <img src='{{info.image}}' alt='twitter pic' />
+      </figure>
+      <div>
+        <h1 id='fullTitle'>{{info.title}} - {{info.state}}</h1>
+        <ul>
+          <li><a href="{{info.website}}">Website</a></li>
+          <li>|</li>
+          <li>{{info.phone}}</li>
+          <li>|</li>
+          <li><a href="{{info.twitter}}">Twitter</a></li>
+        </ul>
+
+        <div class="financial-charts">
+          <ol class="contributor-list">
+            <h3>Top 10 Contibutors</h3>
+            {{#each contributors}}
+              <li>{{org_name}} = ${{total}}</li>
+            {{/each}}
+          </ol>
+        </div>
+      </div>
+    </script>
+
+    <script id="votesTemplate" type="text/x-handlebars-template">
+      {{#each bills}}
+        <section class=" bill-info-container {{positionClass}}">
+          <p class="bill-info ">{{title}}</p>
+          <p class="bill-info right">Position: {{position}}</p>
+        </section>
+      {{/each }}
+    </script>
+
+    <script id="aboutTemplate" type="text/x-handlebars-template">
+      {{#each sections}}
+        <h2>{{title}}</h2>
+        {{{text}}}
+      {{/each}}
+    </script>
+
+  </head>
+  <body>
+
+    <section class="header">
+      <section class="header-container">
+        <a id = 'homeBtn' href = '/'><h1>Contracker</h1></a>
+        <div class="search-contain">
+          <input id="searchField" class="search" placeholder="Find a politician"/>
+          <button class="searchBtn ion-ios-search" data-sort="name" ></button>
+        </div>
+      </section>
+    </section>
+
+    <section class="search-section">
+      <section class="container" id="mainSearch">
+        <!-- <div class="search-contain">
+          <input id="searchField" class="search" placeholder="Find a politician"/>
+          <button class="searchBtn ion-ios-search" data-sort="name" ></button>
+        </div> -->
+      </section>
+    </section>
+
+    <section id="bio-style" class="container">
+      <canvas id="financial-canvas" width="200" height="200"></canvas>
+      <div class="container" id="bio-view"></div>
+      <div id="test"></div>
+    </section>
+
+    <section class="container" id="voting-view">
+    </section>
+
+    <section id="about-view" class="container">
+      <h1>About Our Project</h1>
+
+
+    </section>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
+    <script src="../scripts/searchView.js"></script>
+    <!-- <script src="../scripts/financeController.js"></script>
+    <script src="../scripts/financeView.js"></script> -->
+    <script src="../scripts/bioController.js"></script>
+    <script src="../scripts/bioView.js"></script>
+    <script src="../scripts/financeController.js"></script>
+    <script src="../scripts/financeView.js"></script>
+    <script src="../scripts/votingView.js"></script>
+    <script src="../scripts/votingController.js"></script>
+    <script src="../scripts/aboutView.js"></script>
+    <script src="../scripts/app.js"></script>
+    <script src="../scripts/routes.js"></script>
+  </body>
+</html>

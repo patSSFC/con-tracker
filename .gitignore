@@ -1,2 +1,5 @@
 node_modules
 .DS_Store
+test-data/
+../scripts/testRequest.js
+../scripts/financialCharts.js

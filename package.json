@@ -1,0 +1,28 @@
+{
+  "name": "con-tracker",
+  "version": "1.0.0",
+  "description": "A visualizer for political contributions and report cards",
+  "main": "server.js",
+  "dependencies": {
+    "body-parser": "^1.15.0",
+    "csv": "^0.4.6",
+    "express": "^4.13.4",
+    "express-request-proxy": "^2.0.0",
+    "pg": "4.5.3"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/patSSFC/con-tracker"
+  },
+  "author": "Pat Yolian, Taylor Wirtz, Matt Sheridan-Smith, Austin Arias",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/patSSFC/con-tracker"
+  },
+  "homepage": "https://github.com/patSSFC/con-tracker#readme"
+}
