@@ -1,5 +1,6 @@
 (function (module) {
   var results = {};
+  var search = {};
   var availableTags = [];
   results.all = [];
 
@@ -58,7 +59,12 @@
 
     });
   });
-
+  search.show = function (ctx, next) {
+    $('#mainSearch').append($('.search-contain'));
+    $('.search-section').css('height', '700px', 'padding', '45px');
+    next();
+  };
+  module.search = search;
   module.results = results;
   module.availableTags = availableTags;
 })(window);

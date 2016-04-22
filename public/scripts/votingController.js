@@ -27,7 +27,6 @@
     }).success(
       function (data, message, xhr) {
         var storage = data.results[0].votes;
-        console.log('VOTES :: ' + JSON.stringify(storage));
         voteRepos.all = [];
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
@@ -42,25 +41,23 @@
   voteRepos.returnVotes = function (member, callback) {
     member = member;
     voteHistory = '/nyt_api/' + member + '/votes.json'; // Returns members last 100 votes.
-    console.log('my vote history :: ' + voteHistory);
     requestRepos(callback);
   };
 
   voteRepos.index = function (ctx, next) {
-    console.log('In the index');
 
     votingViews.loadVotes(ctx.bioguideId , votingViews.renderVotes);
+    $('.search-contain').fadeOut();
+    setTimeout(function () {
+      $('.header-container').append($('.search-contain'));
+
+    }, 400);
+
+    $('.search-contain').fadeIn('slow');
+    $('.search-section').delay(400).slideUp(1000);
+    $('.header').css('top', '0');
+    $('.poli-view').css('margin-top', '10em');
     next();
-      $('.search-contain').fadeOut();
-      setTimeout(function () {
-        $('.header-container').append($('.search-contain'));
-
-      }, 400);
-
-      $('.search-contain').fadeIn('slow');
-      $('.search-section').delay(400).slideUp(1000);
-      $('.header').css('top', '0');
-      $('.poli-view').css('margin-top', '10em');
 
   };
 
@@ -69,8 +66,6 @@
       url:'/sunlight_congress/legislators?crp_id=' + ctx.crpId + '&all_legislators=true',
       type: 'GET',
     }).success(function(data, message, xhr){
-      console.log('bioguideID ' + data);
-      console.log('bioguide message ' + message);
       if (data.results[0]){
         ctx.bioguideId = data.results[0].bioguide_id;
         next();
@@ -82,7 +77,6 @@
   };
 
   voteRepos.getCRPID = function (ctx, next) {
-    console.log('FEC ID' + ctx.params.id);
 
     $.ajax({
       url: '/database/',
@@ -94,7 +88,6 @@
         }).map(function(row){
           return row.crp;
         });
-        console.log('CRP::: ' + ctx.crpId);
         next();
       }).error(
         function (data, status) {
@@ -106,7 +99,6 @@
 
 
   voteRepos.about = function (ctx, next) {
-    console.log('ABOUT!' + JSON.stringify(ctx));
   };
 
   module.voteRepos = voteRepos;
