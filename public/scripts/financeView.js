@@ -35,11 +35,12 @@
 
   financeViews.toHtml = function() {
     console.log('inside toHtml');
-    var template = Handlebars.compile($('#top10template').text());
+    $('.contributor-list').hide();
+    var template = Handlebars.compile($('#bioTemplate').text());
     console.log('contrib in view' + bio.contributor);
 
     var context = {contributors: bio.contributor};
-    $('.contributor-list').append(template(context));
+    $('#test').append(template(context));
   };
 
   this.financeViews = financeViews;
