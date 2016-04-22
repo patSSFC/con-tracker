@@ -53,6 +53,13 @@
       {{/each }}
     </script>
 
+    <script id="AboutTempalte" type="text/x-handlebars-template">
+      {{#each section}}
+        <h2>{{title}}</h2>
+        {{{text}}}
+      {{/each}}
+    </script>
+
   </head>
   <body>
 
@@ -81,14 +88,7 @@
 
     <section id="about-view" class="container">
       <h1>About Our Project</h1>
-      <h2>Purpose</h2>
-      <h2>Roadmap</h2>
 
-      <h2>What We Learned</h2>
-
-      <h2>Challanges</h2>
-
-      <h2>Sources</h2>
 
     </section>
 
