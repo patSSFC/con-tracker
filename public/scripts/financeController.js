@@ -16,19 +16,26 @@
     return filingInfo;
   };
 
-  Filing.getFilings = function (ctx, next) {$.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=P60007168'
+  Filing.getFilings = function (ctx, next) {
+    console.log('sup');
+    console.log(ctx);
+    $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=' + ctx.params.id
     , function(data) {
     }).success(function(data) {
       console.log(data.results);
+      console.log('id' + ctx.params.id);
       // Filing.all = data.results;
       Filing.all = data.results.map(function(r) {
         return buildFiling(r);
       });
       console.log(Filing.all);
-      // financeViews.createDoughnut();
+      financeViews.createDoughnut();
       next();
-    });
-    // next();
+    }).error(
+      function (data, status) {
+        console.log(data);
+        console.log(status);
+      });
   };
 
   var buildContributor = function(proto) {
@@ -38,22 +45,28 @@
     return contribInfo;
   };
 
-  Contributor.getContributors = function (next) {
-    $.getJSON('/opensecrets/?method=candContrib&cid=N00007360&cycle=2016&output=json', function(data) {
+  Contributor.getContributors = function (ctx, next) {
+    console.log('ctx' + ctx);
+    console.log('crp' + ctx.crpId);
+    $.getJSON('/opensecrets/?method=candContrib&cid=' + ctx.crpId + '&output=json', function(data) {
       Contributor.contributors = data.response.contributors.contributor;
-    }).done(function(data, message, xhr) {
+    }).success(function(data, message, xhr) {
+      console.log(data);
       var contribs = Contributor.contributors;
       contribs = contribs.map(function(c) {
         return buildContributor(c['@attributes']);
       });
-      Contributor.contributors = contribs;
-      // financeViews.toHtml();
+      bio.contributor = contribs;
+      console.log('contrib in controller' + Contributor.contributors);
+      financeViews.toHtml();
       next();
     });
   };
 
   // Filing.getFilings(financeViews.createDoughnut);
   // Contributor.getContributors(financeViews.toHtml);
-  this.Filing = Filing;
-  this.Contributor = Contributor;
+  module.Filing = Filing;
+  module.Contributor = Contributor;
 })(window);
+
+//P60007168

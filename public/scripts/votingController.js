@@ -27,7 +27,7 @@
     }).success(
       function (data, message, xhr) {
         var storage = data.results[0].votes;
-        console.log('VOTES :: ' + JSON.stringify(storage));
+        // console.log('VOTES :: ' + JSON.stringify(storage));
         voteRepos.all = [];
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
@@ -42,7 +42,7 @@
   voteRepos.returnVotes = function (member, callback) {
     member = member;
     voteHistory = '/nyt_api/' + member + '/votes.json'; // Returns members last 100 votes.
-    console.log('my vote history :: ' + voteHistory);
+    // console.log('my vote history :: ' + voteHistory);
     requestRepos(callback);
   };
 
