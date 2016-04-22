@@ -1,12 +1,12 @@
 (function(module){
-  var about = {};
+  var aboutView = {};
 
   aboutView.getSections = function(path, callback){
     $.getJSON(path, function(data){
       if (data.sections){
-        about.sections = data.sections;
+        aboutView.sections = data.sections;
       }
-      callback(about.sections);
+      callback(aboutView.sections);
     }).error(function(err){
       console.log('There was an error getting about JSON');
       callback(null);
@@ -14,14 +14,15 @@
   };
 
   aboutView.renderData = function(data){
+    console.log(data);
     var ctx = { sections: data };
-    var template = (Handlebars.compile$('#aboutTemplate').text());
+    var template = (Handlebars.compile($('#aboutTemplate').text()));
 
-    $('#about-view').empty().append(template(ctx));
+    $('#about-view').show().append(template(ctx));
   };
 
   aboutView.index = function() {
-    about.getSections(about.renderData);
+    aboutView.getSections('../data/about.json', aboutView.renderData);
   };
 
   module.aboutView = aboutView;
