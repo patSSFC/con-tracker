@@ -1,9 +1,9 @@
   .search-section {
   background-color: rgb(150, 2, 201);
   max-width: 100%;
-  height: 700px; /* probably should not be hardcoded */
-  padding: 45px;
-  margin: -10px -10px 50px -10px;
+  height: ;
+  padding:;
+  margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -23,7 +23,7 @@
 }
 
 .position-yes {
-  background-color: rgb(130, 255, 135);
+  background-color: rgba(64, 237, 69, 1);
   border: 2px solid rgb(27, 194, 0);
   border-radius: 10px;
 }
@@ -53,4 +53,8 @@
 }
 #searchField:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #fff;
+}
+#homeBtn {
+  text-decoration: none;
+  color: white;
 }

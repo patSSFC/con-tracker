@@ -58,16 +58,20 @@
 
     <section class="header">
       <section class="header-container">
-        <h1>Contracker</h1>
+        <a id = 'homeBtn' href = '/'><h1>Contracker</h1></a>
+        <div class="search-contain">
+          <input id="searchField" class="search" placeholder="Find a politician"/>
+          <button class="searchBtn ion-ios-search" data-sort="name" ></button>
+        </div>
       </section>
     </section>
 
     <section class="search-section">
       <section class="container" id="mainSearch">
-        <div class="search-contain">
+        <!-- <div class="search-contain">
           <input id="searchField" class="search" placeholder="Find a politician"/>
           <button class="searchBtn ion-ios-search" data-sort="name" ></button>
-        </div>
+        </div> -->
       </section>
     </section>
 
@@ -76,7 +80,6 @@
     </section>
 
     <section class="container" id="voting-view">
-      <h1>Voting History</h1>
     </section>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>

@@ -69,8 +69,10 @@ figure.poli-picture {
   background-color: black;
   color: white;
 }
-
+#bio-style {
+  margin-top: 7em;
 }
+/*}*/
 /*.ui-menu{
   background-color: blue;
   position: absolute;
