@@ -33,7 +33,7 @@
     requestRepos(callback);
   };
 
-  bio.contributor = Contributor;
+  bio.contributor;
 
   module.bio = bio;
 })(window);

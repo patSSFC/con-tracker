@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <!-- <link type="text/css" rel="stylesheet" href="styles/style.css"> -->
     <title>ConTraker 5000</title>
     <link href="https://fonts.googleapis.com/css?family=Lato:400,700,300|Roboto+Slab:400,700,300" rel="stylesheet" type="text/css">
     <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
@@ -36,7 +35,7 @@
         <div class="financial-charts">
           <ol class="contributor-list">
             <h3>Top 10 Contibutors</h3>
-            {{#each contributor.contributors}}
+            {{#each contributors}}
               <li>{{org_name}} = ${{total}}</li>
             {{/each}}
           </ol>
@@ -83,6 +82,7 @@
     </section>
 
     <section id="bio-style" class="container">
+      <canvas id="financial-canvas" width="200" height="200"></canvas>
       <div class="container" id="bio-view"></div>
     </section>
 
@@ -97,10 +97,12 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/list.js/1.2.0/list.min.js"></script>
     <script src="../scripts/searchView.js"></script>
-    <script src="../scripts/financeController.js"></script>
-    <script src="../scripts/financeView.js"></script>
+    <!-- <script src="../scripts/financeController.js"></script>
+    <script src="../scripts/financeView.js"></script> -->
     <script src="../scripts/bioController.js"></script>
     <script src="../scripts/bioView.js"></script>
+    <script src="../scripts/financeController.js"></script>
+    <script src="../scripts/financeView.js"></script>
     <script src="../scripts/votingView.js"></script>
     <script src="../scripts/votingController.js"></script>
     <script src="../scripts/aboutView.js"></script>

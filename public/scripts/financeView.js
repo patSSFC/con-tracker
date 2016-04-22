@@ -34,12 +34,15 @@
   };
 
   financeViews.toHtml = function() {
+    console.log('inside toHtml');
     var template = Handlebars.compile($('#top10template').text());
-    var context = {contributors: Contributor.contributors};
+    console.log('contrib in view' + bio.contributor);
+
+    var context = {contributors: bio.contributor};
     $('.contributor-list').append(template(context));
   };
 
   this.financeViews = financeViews;
-  Filing.getFilings("blah", financeViews.createDoughnut);
-  Contributor.getContributors(financeViews.toHtml);
+  // Filing.getFilings("blah", financeViews.createDoughnut);
+  // Contributor.getContributors(financeViews.toHtml);
 })(window);

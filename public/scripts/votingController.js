@@ -27,6 +27,12 @@
     }).success(
       function (data, message, xhr) {
         var storage = data.results[0].votes;
+<<<<<<< HEAD
+||||||| merged common ancestors
+        console.log('VOTES :: ' + JSON.stringify(storage));
+=======
+        // console.log('VOTES :: ' + JSON.stringify(storage));
+>>>>>>> eace5059735b5e4f1ddf5dfb318a495903c65c62
         voteRepos.all = [];
         for (var i = 0; i < storage.length; i++) {
           if (findBill(votesArray, storage[i])) {
