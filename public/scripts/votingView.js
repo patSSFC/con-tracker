@@ -28,5 +28,5 @@
     });
   };
 
-  module = votingViews;
+  module.votingViews = votingViews;
 })(window);
