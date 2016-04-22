@@ -45,7 +45,7 @@
   };
 
   voteRepos.index = function (ctx, next) {
-
+    $('#about-view').hide();
     votingViews.loadVotes(ctx.bioguideId , votingViews.renderVotes);
     $('.search-contain').fadeOut();
     setTimeout(function () {
@@ -95,10 +95,6 @@
           console.log(status);
           next();
         });
-  };
-
-
-  voteRepos.about = function (ctx, next) {
   };
   module.voteRepos = voteRepos;
 })(window);

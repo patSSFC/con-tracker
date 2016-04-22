@@ -1,4 +1,3 @@
-// page('/', app.initIndexPage);
 console.log('LOADING ROUTES');
 page('/about', aboutView.index);
 page('/', search.show, results.compile);
