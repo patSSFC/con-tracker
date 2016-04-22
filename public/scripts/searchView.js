@@ -1,5 +1,6 @@
 (function (module) {
   var results = {};
+  var search = {};
   var availableTags = [];
   results.all = [];
 
@@ -46,25 +47,24 @@
     $('#searchField').autocomplete({
       source: availableTags,
     });
-    $('.searchBtn').on('click', function () {
+    $('.searchBtn').on('click', function (a) {
+      a.preventDefault();
       var userInput = $('#searchField').val();
-
-      $('.search-contain').fadeOut();
-      setTimeout(function () {
-        $('.header-container').append($('.search-contain'));
-
-      }, 400);
-
-      $('.search-contain').fadeIn('slow');
-      $('.search-section').delay(400).slideUp(1000);
-      $('.header').css('top', '0');
-      $('.poli-view').css('margin-top', '10em');
-      console.log(userInput);
       var fecid = getFecId(userInput) || '';
       page('/politicians/' + fecid[0]);
+
+
+
+      console.log(userInput);
+
     });
   });
-
+  search.show = function (ctx, next) {
+    $('#mainSearch').append($('.search-contain'));
+    $('.search-section').css('height', '700px', 'padding', '45px');
+    next();
+  };
+  module.search = search;
   module.results = results;
   module.availableTags = availableTags;
 })(window);
