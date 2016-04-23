@@ -25,5 +25,7 @@
     .done(callback);
   };
 
+  // bio.contributors = Contributor.contributors;
+
   module.bio = bio; // Originally we added a "contributor" property to run the template only once.
 })(window);

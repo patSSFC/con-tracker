@@ -33,15 +33,15 @@
     return financeViews.chartDataSet;
   };
 
-  financeViews.toHtml = function() {
-    console.log('inside toHtml');
-    $('.contributor-list').hide();
-    var template = Handlebars.compile($('#bioTemplate').text());
-    console.log('contrib in view' + bio.contributor);
-
-    var context = {contributors: bio.contributor};
-    $('#test').append(template(context));
-  };
+  // financeViews.toHtml = function() {
+  //   console.log('inside toHtml');
+  //   $('.contributor-list').hide();
+  //   // var template = Handlebars.compile($('#bioTemplate').text());
+  //   // console.log('contrib in view' + bio.contributor);
+  //
+  //   var context = {contributors: bio.contributor};
+  //   $('#test').append(template(context));
+  // };
 
   this.financeViews = financeViews;
   // Filing.getFilings("blah", financeViews.createDoughnut);

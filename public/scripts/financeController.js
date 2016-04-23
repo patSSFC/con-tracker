@@ -56,9 +56,10 @@
       contribs = contribs.map(function(c) {
         return buildContributor(c['@attributes']);
       });
-      bio.contributor = contribs;
+      bio.contributors = contribs;
+      // Contributor.list = contribs;
       console.log('contrib in controller' + Contributor.contributors);
-      financeViews.toHtml();
+      // financeViews.toHtml();
       next();
     });
   };
