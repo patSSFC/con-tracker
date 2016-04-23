@@ -13,7 +13,7 @@
     return bioInfo;
   };
 
-  var requestRepos = function (member, callback) {
+  bio.requestRepos = function (member, callback) {
     $.ajax({
       url: '/sunlight_congress/legislators?fec_ids=' + member,
       method: 'GET',
@@ -25,11 +25,5 @@
     .done(callback);
   };
 
-  bio.returnBio = function (member, callback) {
-    requestRepos(member, callback);
-  };
-
-  bio.contributor;
-
-  module.bio = bio;
+  module.bio = bio; // Originally we added a "contributor" property to run the template only once.
 })(window);

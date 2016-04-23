@@ -1,7 +1,7 @@
 (function (module) {
   bioViews = {};
 
-  var partyColor = function (party) {
+  var partyColor = function (party) { // adds a css class that predicates color by party.
     if (party === 'D') {
       return 'democrat';
     } else if (party === 'R') {
@@ -11,23 +11,22 @@
     }
   };
 
-
-  bioViews.renderBio = function (bio) {
+  bioViews.renderBio = function () {
     var template = Handlebars.compile($('#bioTemplate').html());
+    $('#bio-view').empty();
     $('#bio-view').append(template(bio));
     $('#fullTitle').addClass(partyColor(bio.info.party));
-  };
-
-
-  bioViews.loadBio = function (member, callback) {
-    bio.returnBio(member, function (data, message) {
-      callback(bio);
-    });
   };
 
   bioViews.index = function (ctx, next) {
     bioViews.loadBio(ctx.params.id, bioViews.renderBio);
     next();
+  };
+
+  bioViews.loadBio = function (member, callback) {
+    bio.requestRepos(member, function (data, message) {
+      callback(bio);
+    });
   };
 
   module.bioViews = bioViews;
