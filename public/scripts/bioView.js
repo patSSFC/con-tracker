@@ -25,5 +25,10 @@
     });
   };
 
+  bioViews.index = function (ctx, next) {
+    bioViews.loadBio(ctx.params.id, bioViews.renderBio);
+    next();
+  };
+
   module.bioViews = bioViews;
 })(window);

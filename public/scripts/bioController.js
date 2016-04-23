@@ -1,7 +1,5 @@
 (function (module) {
   var bio = {};
-  var fecID;
-  var bioHistory;
 
   var buildBio = function (proto) { // Takes a legislator object and creates a new legislator object with specific properties.
     var bioInfo = {};
@@ -15,9 +13,9 @@
     return bioInfo;
   };
 
-  var requestRepos = function (callback) {
+  var requestRepos = function (member, callback) {
     $.ajax({
-      url: bioHistory,
+      url: '/sunlight_congress/legislators?fec_ids=' + member,
       method: 'GET',
     }).success(
       function (data, message, xhr) {
@@ -28,9 +26,7 @@
   };
 
   bio.returnBio = function (member, callback) {
-    fecID = member;
-    bioHistory = '/sunlight_congress/legislators?fec_ids=' + fecID;
-    requestRepos(callback);
+    requestRepos(member, callback);
   };
 
   bio.contributor;
