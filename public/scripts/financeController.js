@@ -17,18 +17,12 @@
   };
 
   Filing.getFilings = function (ctx, next) {
-    console.log('sup');
-    console.log(ctx);
     $.getJSON('/sunlight_finance//new_filing/?format=json&page=1&page_size=10&candidate_id=' + ctx.params.id
     , function(data) {
     }).success(function(data) {
-      console.log(data.results);
-      console.log('id' + ctx.params.id);
-      // Filing.all = data.results;
       Filing.all = data.results.map(function(r) {
         return buildFiling(r);
       });
-      console.log(Filing.all);
       financeViews.createDoughnut();
       next();
     }).error(
@@ -46,28 +40,18 @@
   };
 
   Contributor.getContributors = function (ctx, next) {
-    console.log('ctx' + ctx);
-    console.log('crp' + ctx.crpId);
     $.getJSON('/opensecrets/?method=candContrib&cid=' + ctx.crpId + '&output=json', function(data) {
       Contributor.contributors = data.response.contributors.contributor;
     }).success(function(data, message, xhr) {
-      console.log(data);
       var contribs = Contributor.contributors;
       contribs = contribs.map(function(c) {
         return buildContributor(c['@attributes']);
       });
       bio.contributors = contribs;
-      // Contributor.list = contribs;
-      console.log('contrib in controller' + Contributor.contributors);
-      // financeViews.toHtml();
       next();
     });
   };
 
-  // Filing.getFilings(financeViews.createDoughnut);
-  // Contributor.getContributors(financeViews.toHtml);
   module.Filing = Filing;
   module.Contributor = Contributor;
 })(window);
-
-//P60007168
