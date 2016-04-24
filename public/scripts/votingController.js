@@ -46,6 +46,7 @@
 
   voteRepos.index = function (ctx, next) {
     $('#about-view').hide();
+    $('#voting-view').show();
     votingViews.loadVotes(ctx.bioguideId , votingViews.renderVotes);
     $('.search-contain').fadeOut();
     setTimeout(function () {

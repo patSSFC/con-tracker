@@ -22,6 +22,8 @@
 
   aboutView.index = function() {
     aboutView.getSections('../data/about.json', aboutView.renderData);
+    $('#bio-style').hide();
+    $('#voting-view').hide();
   };
 
   module.aboutView = aboutView;
