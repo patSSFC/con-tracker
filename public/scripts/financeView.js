@@ -4,7 +4,6 @@
   financeViews.chartDataSet = [];
 
   financeViews.createDoughnut = function () {
-    console.log('doughtnut' + myDoughnutChart);
     var myDoughnutChart;
     destroyChart();
     $('#financial-canvas').empty();

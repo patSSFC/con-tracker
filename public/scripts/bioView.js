@@ -1,7 +1,7 @@
 (function (module) {
   bioViews = {};
 
-  var partyColor = function (party) { // adds a css class that predicates color by party.
+  var partyColor = function (party) {
     if (party === 'D') {
       return 'democrat';
     } else if (party === 'R') {
