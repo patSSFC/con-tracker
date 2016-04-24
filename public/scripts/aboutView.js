@@ -14,7 +14,6 @@
   };
 
   aboutView.renderData = function(data){
-    console.log(data);
     var ctx = { sections: data };
     var template = (Handlebars.compile($('#aboutTemplate').text()));
 

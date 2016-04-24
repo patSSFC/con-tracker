@@ -11,16 +11,20 @@
     }
   };
 
-
-  bioViews.renderBio = function (bio) {
+  bioViews.renderBio = function () {
     var template = Handlebars.compile($('#bioTemplate').html());
+    $('#bio-view').empty();
     $('#bio-view').append(template(bio));
     $('#fullTitle').addClass(partyColor(bio.info.party));
   };
 
+  bioViews.index = function (ctx, next) {
+    bioViews.loadBio(ctx.params.id, bioViews.renderBio);
+    next();
+  };
 
   bioViews.loadBio = function (member, callback) {
-    bio.returnBio(member, function (data, message) {
+    bio.requestRepos(member, function (data, message) {
       callback(bio);
     });
   };

@@ -53,10 +53,6 @@
       var fecid = getFecId(userInput) || '';
       page('/politicians/' + fecid[0]);
 
-
-
-      console.log(userInput);
-
     });
   });
   search.show = function (ctx, next) {
