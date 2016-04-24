@@ -72,14 +72,8 @@ figure.poli-picture {
 #bio-style {
   margin-top: 7em;
 }
-
-.flexMiddle {
-  -webkit-flex: 2;
-  flex: 2;
-}
 .aboutLink {
-  -webkit-flex: 1;
-  flex: 1;
+  z-index: 0;
 }
 /*}*/
 /*.ui-menu{
