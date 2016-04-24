@@ -14,7 +14,7 @@
     console.log(data);
 
     var myDoughnutChart = new Chart(ctx).Doughnut(data,{
-      maintainAspectRatio: true
+      // maintainAspectRatio: true
     });
   };
 
