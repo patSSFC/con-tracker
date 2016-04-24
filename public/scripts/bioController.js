@@ -22,7 +22,7 @@
   };
 
   var buildImage = function(twitter, party) {
-    if (!twitter === 'http://www.twitter.com/') {
+    if (twitter) {
       return 'https://twitter.com/' + twitter + '/profile_image?size=original';
     } else if (party === 'D') {
       return 'https://upload.wikimedia.org/wikipedia/commons/6/68/Blue_square_D.PNG';
