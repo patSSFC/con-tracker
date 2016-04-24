@@ -4,6 +4,7 @@
   financeViews.chartDataSet = [];
 
   financeViews.createDoughnut = function () {
+    $('#bio-style').show();
     var myDoughnutChart;
     destroyChart();
     $('#financial-canvas').empty();
