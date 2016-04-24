@@ -19,7 +19,7 @@
   };
 
   bioViews.index = function (ctx, next) {
-    bioViews.loadBio(ctx.params.id, bioViews.renderBio);
+    bioViews.loadBio(ctx.crpId, bioViews.renderBio);
     next();
   };
 

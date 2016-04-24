@@ -3,14 +3,20 @@
 
   var buildBio = function (proto) { // Takes a legislator object and creates a new legislator object with specific properties.
     var bioInfo = {};
-    bioInfo.twitter = 'http://www.twitter.com/' + (proto.twitter_id === undefined ? '' : proto.twitter_id);
-    bioInfo.title = verify(proto.title) + '. ' + verify(proto.first_name) + ' '+ verify(proto.last_name) + ' (' + verify(proto.party) + ')';
-    bioInfo.state = verify(proto.state);
-    bioInfo.website = verify(proto.website);
-    bioInfo.phone = verify(proto.phone);
-    bioInfo.party = verify(proto.party);
-    bioInfo.image = buildImage(verify(proto.twitter_id), verify(proto.party));
-    return bioInfo;
+    if (proto){
+      bioInfo.twitter = 'http://www.twitter.com/' + (proto.twitter_id === undefined ? '' : proto.twitter_id);
+      bioInfo.title = verify(proto.title) + '. ' + verify(proto.first_name) + ' '+ verify(proto.last_name) + ' (' + verify(proto.party) + ')';
+      bioInfo.state = verify(proto.state);
+      bioInfo.website = verify(proto.website);
+      bioInfo.phone = verify(proto.phone);
+      bioInfo.party = verify(proto.party);
+      bioInfo.image = buildImage(verify(proto.twitter_id), verify(proto.party));
+      return bioInfo;
+    } else {
+      // handle error here
+    }
+
+
   };
 
   var verify = function(str) {
@@ -35,7 +41,7 @@
 
   bio.requestRepos = function (member, callback) {
     $.ajax({
-      url: '/sunlight_congress/legislators?fec_ids=' + member,
+      url: '/sunlight_congress/legislators?crp_id=' + member + '&all_legislators=true',
       method: 'GET',
     }).success(
       function (data, message, xhr) {
