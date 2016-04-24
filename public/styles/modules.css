@@ -110,8 +110,9 @@ figure.poli-picture img {
   .header {
     height: 11rem;
   }
-  canvas {
-    margin-top: 8rem;
+  #bio-style {
+    margin-top: 10em;
+  }
   }
 
 }
