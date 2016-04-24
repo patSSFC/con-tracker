@@ -58,7 +58,7 @@
   search.show = function (ctx, next) {
     $('#about-view').hide();
     $('#mainSearch').append($('.search-contain'));
-    $('.search-section').css('height', '700px', 'padding', '45px');
+    $('.search-section').css('height', '100vh', 'padding', '45px');
     next();
   };
   module.search = search;
