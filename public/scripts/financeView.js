@@ -10,9 +10,7 @@
     var ctx = $('#financial-canvas').get(0).getContext('2d');
     var data = buildChartData();
 
-    myDoughnutChart = new Chart(ctx).Doughnut(data,{
-      maintainAspectRatio: true
-    });
+    var myDoughnutChart = new Chart(ctx).Doughnut(data);
     financeViews.currentChart = myDoughnutChart;
   };
 
