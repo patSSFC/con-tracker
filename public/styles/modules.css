@@ -9,11 +9,11 @@
 }
 
 .header {
-  /*background-color: rgb(187, 255, 89);*/
   height: 5rem;
   max-width: 100%;
   width: 100%;
-  padding: 1.25rem;
+  padding-bottom: 4.25rem;
+  padding-top: 1.25rem;
   margin: 0px;
   position: fixed;
   background-color: rgb(150, 2, 201);
@@ -27,8 +27,12 @@
   -webkit-flex-flow: row;
   flex-flow: row;
   justify-content: space-between;
+  align-items: center;
   align-items: baseline;
-  margin: 0;
+  margin-left: 20px;
+  margin-right: 20px;
+  margin-top: 0;
+  max-width: 98%;
 }
 
 .header-container > h1{
@@ -97,20 +101,17 @@ figure.poli-picture img {
   }
 }
 
-@media (max-width: 550px) {
-  /*.container {
-    margin-top: 20%;
-  }*/
-}
+
 
 @media only screen and (max-width: 400px) {
   .header-container {
     flex-flow: column;
   }
   .header {
-    height: 8rem;
+    height: 11rem;
   }
-  /*.container {
-    margin-top: 50%;
-  }*/
+  canvas {
+    margin-top: 8rem;
+  }
+
 }

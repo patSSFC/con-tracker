@@ -54,7 +54,7 @@
 #searchField:-ms-input-placeholder { /* Internet Explorer 10-11 */
    color:    #fff;
 }
-#homeBtn {
+#homeBtn, #about {
   text-decoration: none;
   color: white;
 }
